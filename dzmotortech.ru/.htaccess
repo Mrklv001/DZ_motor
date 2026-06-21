@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.dzmotortech\.ru$ [NC]
+RewriteRule ^(.*)$ https://dzmotortech.ru/$1 [L,R=301]
