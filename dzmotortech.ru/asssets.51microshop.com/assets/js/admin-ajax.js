@@ -194,7 +194,6 @@ $(document).ready(function () {
     $.ajax({
         type: "POST",
         url: "/Submit/ajaxrequest.ashx?cmd=GetShopCartItemNumber",
-        async: false,
         beforeSend: function (XMLHttpRequest) {
         },
         success: function (data, textStatus) {
