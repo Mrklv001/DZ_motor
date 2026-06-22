@@ -1334,7 +1334,7 @@ input[name="ckb_cartitem"] {
 
 
 .home_custom_design .title, .home_custom_design h2, .home_custom_design h4 {
-	text-transform: capitalize;
+	text-transform: none;
 }
 
 .videotext .btn-group-justified > .btn-group {
