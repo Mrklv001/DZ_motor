@@ -1354,4 +1354,12 @@ input[name="ckb_cartitem"] {
 	}
 }
 
+#header .header_box .r_icon .pc_search {
+	display: none;
+}
+
+.ueeshop_responsive_header .header .func .search_btn {
+	display: none;
+}
+
 
