@@ -1016,4 +1016,13 @@ ul.nav_third{width:max-content}
 .nav_list>a{font-size:16px;text-transform:none}
 .mbx_list h1,.mbx_list h2{text-transform:none}
 
+#header .header_box .nav_bar .nav_first{flex-wrap:nowrap}
+#header .header_box .nav_bar li.nav_list{padding:0 8px}
+@media (max-width:1199px) and (min-width:992px){
+#header .header_box .nav_bar li.nav_list{padding:0 3px}
+#header .header_box .nav_bar .navigation{font-size:12px}
+}
+
+.footer_sub_nav li a{line-height:24px}
+
 
