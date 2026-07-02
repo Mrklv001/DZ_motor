@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <meta charset="utf-8">
 <title>Вход — Админка DZ Motor Tech</title>
 <meta name="robots" content="noindex, nofollow">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/asssets.51microshop.com/assets/css/fonts.css">
 <link rel="stylesheet" href="assets/admin.css">
 </head>
 <body>
