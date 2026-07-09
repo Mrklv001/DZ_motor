@@ -1362,4 +1362,56 @@ input[name="ckb_cartitem"] {
 	display: none;
 }
 
+/* Language switcher pill */
+#header .header_box .r_icon .header_language {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  background: #f0f4fb !important;
+  border: 1.5px solid #c8d8f0 !important;
+  border-radius: 24px !important;
+  padding: 4px 6px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  height: auto !important;
+  cursor: default !important;
+  position: relative !important;
+  color: inherit !important;
+}
+.ls-pill-opt {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  line-height: 1;
+}
+.ls-pill-opt.ls-active {
+  background: #1a2b4a;
+  color: #fff !important;
+  pointer-events: none;
+}
+.ls-pill-opt:not(.ls-active) {
+  color: #7a9cc8 !important;
+  background: transparent;
+}
+.ls-pill-opt:not(.ls-active):hover {
+  color: #1a2b4a !important;
+  background: #e4ecf9;
+}
+.ls-pill-sep {
+  width: 1px;
+  height: 16px;
+  background: #c8d8f0;
+  margin: 0 1px;
+  flex-shrink: 0;
+}
+.header_language_con { display: none !important; }
+
 

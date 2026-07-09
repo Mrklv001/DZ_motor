@@ -47,3 +47,26 @@
     banner.remove();
   };
 })();
+
+// Language switcher pill
+(function () {
+  function initSwitcher() {
+    var el = document.querySelector('#header .header_language');
+    if (!el) return;
+    var path = window.location.pathname;
+    var isEn = path.indexOf('/en') === 0;
+    el.innerHTML =
+      '<a class="ls-pill-opt' + (!isEn ? ' ls-active' : '') + '" href="/">' +
+        '<span>🇷🇺</span> RU' +
+      '</a>' +
+      '<div class="ls-pill-sep"></div>' +
+      '<a class="ls-pill-opt' + (isEn ? ' ls-active' : '') + '" href="/en/">' +
+        '<span>🇬🇧</span> EN' +
+      '</a>';
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSwitcher);
+  } else {
+    initSwitcher();
+  }
+})();
