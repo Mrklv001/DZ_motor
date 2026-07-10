@@ -1414,4 +1414,135 @@ input[name="ckb_cartitem"] {
 }
 .header_language_con { display: none !important; }
 
+/* ── Mobile adaptations ──────────────────────────────────── */
+
+/* 1. White header background on mobile */
+@media (max-width: 991px) {
+  .ueeshop_responsive_header .header {
+    background: #fff !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
+  }
+  .ueeshop_responsive_header .header .func .menu_btn {
+    filter: invert(1) !important;
+  }
+  .ueeshop_responsive_header .header .func .menu_btn.on {
+    filter: invert(1) !important;
+  }
+}
+
+/* 2. Category section + product images strip: hide on mobile (homepage only) */
+@media (max-width: 767px) {
+  body[data-template="index"] #gallery-jigsaw-b_2,
+  body[data-template="index"] #gallery-jigsaw-b_4 {
+    display: none !important;
+  }
+}
+
+/* 3a. Gallery card style — страница "применение" (все размеры экрана) */
+body[data-template="page"] .gallery_jigsaw_b .btn_group_modal {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.10) !important;
+  background: #fff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .gallery_jigsaw_imgmodal {
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .gallery_jigsaw_imgmodal img {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .btn_group_modal_overlay {
+  position: static !important;
+  margin: 0 !important;
+  background: #fff !important;
+  padding: 10px 12px !important;
+  line-height: 1.4 !important;
+  flex: 1 !important;
+}
+body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .products_title {
+  height: auto !important;
+  min-height: unset !important;
+  line-height: 1.4 !important;
+}
+body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .products_title a {
+  font-size: 14px !important;
+  color: #1a2b4a !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  max-height: unset !important;
+  display: block !important;
+}
+body[data-template="page"] .gallery_jigsaw_b h2.title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #1a2b4a !important;
+  border-left: 4px solid #2563b0 !important;
+  padding-left: 10px !important;
+  margin-bottom: 16px !important;
+}
+
+/* 3a-desktop. Application page: 3-column grid on desktop */
+@media (min-width: 768px) {
+  body[data-template="page"] .gallery_jigsaw_b .btn-group-justified {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+    float: none !important;
+  }
+  body[data-template="page"] .gallery_jigsaw_b .btn-group-justified .btn-group {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+    padding: 0 !important;
+  }
+}
+
+/* 3a-mobile. Application page: 2-column grid on mobile */
+@media (max-width: 767px) {
+  body[data-template="page"] .gallery_jigsaw_b .btn-group-justified {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    float: none !important;
+  }
+  body[data-template="page"] .gallery_jigsaw_b .btn-group-justified .btn-group {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+    padding: 0 !important;
+  }
+  body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .gallery_jigsaw_imgmodal img {
+    height: 110px !important;
+  }
+  body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .products_title a {
+    font-size: 12px !important;
+  }
+  body[data-template="page"] .gallery_jigsaw_b h2.title {
+    font-size: 18px !important;
+  }
+}
+
+/* 3b. Contact page: hide duplicate "Контакты" heading on mobile */
+@media (max-width: 767px) {
+  body[data-template="page.contact"] .main_title {
+    display: none;
+  }
+}
+
+/* 4. About page: restore bullet points in .page_html lists */
+.page_html ul {
+  list-style: disc !important;
+  padding-left: 22px !important;
+}
+.page_html ul li {
+  list-style-type: disc !important;
+}
+
 
