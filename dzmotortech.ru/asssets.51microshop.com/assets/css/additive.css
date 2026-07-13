@@ -1340,6 +1340,11 @@ input[name="ckb_cartitem"] {
 .videotext .btn-group-justified > .btn-group {
 	vertical-align: top;
 }
+@media (min-width: 768px) {
+	.videotext .video-list-modal.home-intro-video {
+		margin-top: 65px !important;
+	}
+}
 
 /* video-list-modal used padding-bottom:57% to reserve aspect-ratio space for an
    absolutely-positioned <iframe>. Our self-hosted <video> sizes itself natively
@@ -1348,11 +1353,6 @@ input[name="ckb_cartitem"] {
 	padding-bottom: 0 !important;
 }
 
-@media (min-width: 768px) {
-	.videotext .video-list-modal.home-intro-video {
-		margin-top: 120px !important;
-	}
-}
 
 #header .header_box .r_icon .pc_search {
 	display: none;
@@ -1611,6 +1611,23 @@ body.page-en #header .header_box .nav_bar ul.nav_first {
 body.page-en #header .header_box .r_icon {
   align-self: center !important;
   flex-shrink: 0 !important;
+}
+
+/* 7. Mobile: burger + language pill on same line */
+.ueeshop_responsive_header .header .func {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+}
+.ueeshop_responsive_header .header .func .ls-mobile-pill {
+  margin-right: 0 !important;
+  flex-shrink: 0 !important;
+}
+.ueeshop_responsive_header .header .func .menu_btn {
+  flex-shrink: 0 !important;
+  width: 24px !important;
+  height: 24px !important;
 }
 
 /* 6. EN homepage: sync section order to match RU (categories → video → 4 products) */
