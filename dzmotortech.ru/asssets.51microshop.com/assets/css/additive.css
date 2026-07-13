@@ -1439,7 +1439,7 @@ input[name="ckb_cartitem"] {
 }
 
 /* 3a. Gallery card style — страница "применение" (все размеры экрана) */
-body[data-template="page"] .gallery_jigsaw_b .btn_group_modal {
+body.page-application .gallery_jigsaw_b .btn_group_modal {
   border-radius: 8px !important;
   overflow: hidden !important;
   box-shadow: 0 2px 10px rgba(0,0,0,0.10) !important;
@@ -1448,17 +1448,17 @@ body[data-template="page"] .gallery_jigsaw_b .btn_group_modal {
   flex-direction: column !important;
   height: 100% !important;
 }
-body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .gallery_jigsaw_imgmodal {
+body.page-application .gallery_jigsaw_b .btn_group_modal .gallery_jigsaw_imgmodal {
   display: block !important;
   flex-shrink: 0 !important;
 }
-body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .gallery_jigsaw_imgmodal img {
+body.page-application .gallery_jigsaw_b .btn_group_modal .gallery_jigsaw_imgmodal img {
   width: 100% !important;
   height: 180px !important;
   object-fit: cover !important;
   display: block !important;
 }
-body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .btn_group_modal_overlay {
+body.page-application .gallery_jigsaw_b .btn_group_modal .btn_group_modal_overlay {
   position: static !important;
   margin: 0 !important;
   background: #fff !important;
@@ -1466,12 +1466,12 @@ body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .btn_group_modal_o
   line-height: 1.4 !important;
   flex: 1 !important;
 }
-body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .products_title {
+body.page-application .gallery_jigsaw_b .btn_group_modal .products_title {
   height: auto !important;
   min-height: unset !important;
   line-height: 1.4 !important;
 }
-body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .products_title a {
+body.page-application .gallery_jigsaw_b .btn_group_modal .products_title a {
   font-size: 14px !important;
   color: #1a2b4a !important;
   font-weight: 600 !important;
@@ -1479,7 +1479,7 @@ body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .products_title a 
   max-height: unset !important;
   display: block !important;
 }
-body[data-template="page"] .gallery_jigsaw_b h2.title {
+body.page-application .gallery_jigsaw_b h2.title {
   font-size: 20px !important;
   font-weight: 700 !important;
   color: #1a2b4a !important;
@@ -1490,13 +1490,13 @@ body[data-template="page"] .gallery_jigsaw_b h2.title {
 
 /* 3a-desktop. Application page: 3-column grid on desktop */
 @media (min-width: 768px) {
-  body[data-template="page"] .gallery_jigsaw_b .btn-group-justified {
+  body.page-application .gallery_jigsaw_b .btn-group-justified {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 14px !important;
     float: none !important;
   }
-  body[data-template="page"] .gallery_jigsaw_b .btn-group-justified .btn-group {
+  body.page-application .gallery_jigsaw_b .btn-group-justified .btn-group {
     display: block !important;
     width: 100% !important;
     float: none !important;
@@ -1506,30 +1506,67 @@ body[data-template="page"] .gallery_jigsaw_b h2.title {
 
 /* 3a-mobile. Application page: 2-column grid on mobile */
 @media (max-width: 767px) {
-  body[data-template="page"] .gallery_jigsaw_b .btn-group-justified {
+  body.page-application .gallery_jigsaw_b .btn-group-justified {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 10px !important;
     float: none !important;
   }
-  body[data-template="page"] .gallery_jigsaw_b .btn-group-justified .btn-group {
+  body.page-application .gallery_jigsaw_b .btn-group-justified .btn-group {
     display: block !important;
     width: 100% !important;
     float: none !important;
     padding: 0 !important;
   }
-  body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .gallery_jigsaw_imgmodal img {
+  body.page-application .gallery_jigsaw_b .btn_group_modal .gallery_jigsaw_imgmodal img {
     height: 110px !important;
   }
-  body[data-template="page"] .gallery_jigsaw_b .btn_group_modal .products_title a {
+  body.page-application .gallery_jigsaw_b .btn_group_modal .products_title a {
     font-size: 12px !important;
   }
-  body[data-template="page"] .gallery_jigsaw_b h2.title {
+  body.page-application .gallery_jigsaw_b h2.title {
     font-size: 18px !important;
   }
 }
 
-/* 3b. Contact page: hide duplicate "Контакты" heading on mobile */
+/* 3b. Mobile language switcher pill */
+.ls-mobile-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #f0f4fb !important;
+  border: 1.5px solid #c8d8f0 !important;
+  border-radius: 20px !important;
+  padding: 2px 4px !important;
+  gap: 0 !important;
+  vertical-align: middle !important;
+  margin-right: 6px !important;
+}
+.ls-mobile-pill .ls-pill-opt {
+  font-size: 11px !important;
+  padding: 3px 7px !important;
+}
+
+/* 3c. Homepage mobile: show "О нас" before video */
+@media (max-width: 767px) {
+  .videotext .btn-group-justified {
+    display: flex !important;
+    flex-direction: column !important;
+    float: none !important;
+  }
+  .videotext .btn-group-justified .btn-group {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+  }
+  .videotext .btn-group-justified .btn-group[data-index="1"] {
+    order: 2 !important;
+  }
+  .videotext .btn-group-justified .btn-group[data-index="2"] {
+    order: 1 !important;
+  }
+}
+
+/* 3e. Contact page: hide duplicate "Контакты" heading on mobile */
 @media (max-width: 767px) {
   body[data-template="page.contact"] .main_title {
     display: none;
@@ -1544,5 +1581,50 @@ body[data-template="page"] .gallery_jigsaw_b h2.title {
 .page_html ul li {
   list-style-type: disc !important;
 }
+
+/* 5. Product images strip: hover scale effect (RU: #gallery-jigsaw-b_4, EN: #gallery-jigsaw-b_2) */
+#gallery-jigsaw-b_4 .btn_group_modal,
+#gallery-jigsaw-b_2 .btn_group_modal {
+  transition: transform 0.25s ease !important;
+  cursor: pointer !important;
+}
+#gallery-jigsaw-b_4 .btn_group_modal:hover,
+#gallery-jigsaw-b_2 .btn_group_modal:hover {
+  transform: scale(1.05) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* 6a. EN header: vertically center nav + distribute items evenly */
+body.page-en #header .header_box {
+  align-items: center !important;
+}
+body.page-en #header .header_box .nav_bar {
+  flex: 1 !important;
+  align-self: center !important;
+}
+body.page-en #header .header_box .nav_bar ul.nav_first {
+  display: flex !important;
+  justify-content: space-around !important;
+  width: 100% !important;
+}
+body.page-en #header .header_box .r_icon {
+  align-self: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* 6. EN homepage: sync section order to match RU (categories → video → 4 products) */
+body.page-en[data-template="index"] .home_custom_design {
+  display: flex !important;
+  flex-direction: column !important;
+}
+body.page-en[data-template="index"] #gallery_1         { order: 1 !important; }
+body.page-en[data-template="index"] #gallery-jigsaw-b_4 { order: 2 !important; }
+body.page-en[data-template="index"] #videos-a_3         { order: 3 !important; }
+body.page-en[data-template="index"] #gallery-jigsaw-b_2 { order: 4 !important; }
+body.page-en[data-template="index"] #testimonials_5     { order: 5 !important; }
+body.page-en[data-template="index"] #gallery_18187_b_6  { order: 6 !important; }
+body.page-en[data-template="index"] #gallery-jigsaw-b_7 { order: 7 !important; }
+body.page-en[data-template="index"] #gallery-jigsaw-b_8 { order: 8 !important; }
 
 

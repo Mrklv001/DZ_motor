@@ -48,25 +48,50 @@
   };
 })();
 
-// Language switcher pill
+// Language switcher pill (desktop + mobile)
 (function () {
-  function initSwitcher() {
-    var el = document.querySelector('#header .header_language');
-    if (!el) return;
-    var path = window.location.pathname;
-    var isEn = path.indexOf('/en') === 0;
-    el.innerHTML =
-      '<a class="ls-pill-opt' + (!isEn ? ' ls-active' : '') + '" href="/">' +
-        '<span>🇷🇺</span> RU' +
-      '</a>' +
-      '<div class="ls-pill-sep"></div>' +
-      '<a class="ls-pill-opt' + (isEn ? ' ls-active' : '') + '" href="/en/">' +
-        '<span>🇬🇧</span> EN' +
-      '</a>';
+  var path = window.location.pathname;
+  var isEn = path.indexOf('/en') === 0;
+
+  function pillHTML(active) {
+    return '<a class="ls-pill-opt' + (!active ? ' ls-active' : '') + '" href="/"><span>🇷🇺</span> RU</a>' +
+           '<div class="ls-pill-sep"></div>' +
+           '<a class="ls-pill-opt' + (active ? ' ls-active' : '') + '" href="/en/"><span>🇬🇧</span> EN</a>';
   }
+
+  function initSwitcher() {
+    // Desktop header
+    var el = document.querySelector('#header .header_language');
+    if (el) el.innerHTML = pillHTML(isEn);
+
+    // Mobile header
+    var func = document.querySelector('.ueeshop_responsive_header .header .func');
+    if (func && !func.querySelector('.ls-mobile-pill')) {
+      var pill = document.createElement('div');
+      pill.className = 'ls-mobile-pill';
+      pill.innerHTML = pillHTML(isEn);
+      func.insertBefore(pill, func.firstChild);
+    }
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initSwitcher);
   } else {
     initSwitcher();
+  }
+})();
+
+// Mark application page for scoped CSS
+(function () {
+  if (window.location.pathname.indexOf('%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5') !== -1 ||
+      window.location.pathname.indexOf('применение') !== -1) {
+    document.body.classList.add('page-application');
+  }
+})();
+
+// Mark EN pages for scoped CSS
+(function () {
+  if (window.location.pathname.indexOf('/en') === 0) {
+    document.body.classList.add('page-en');
   }
 })();
