@@ -1,0 +1,511 @@
+{
+  "lang": "en",
+  "categories": [
+    {
+      "id": "237492",
+      "title": "Servo Motor",
+      "url": "Servo-Motor-c237492/index.html",
+      "description": "ZE and ZF series synchronous servo motors, including high-power and ZF-SV versions.",
+      "spec": "",
+      "image": "https://images.51microshop.com/18187/product/20250528/ZF_SV_Series_Servo_Motor_1748410336011_0.png_w720.jpg",
+      "products": [
+        {
+          "id": "6469244",
+          "name": "ZF-SV Series Servo Motor",
+          "url": "ZF-SV-Series-Servo-Motor-p6469244.html",
+          "image": "https://images.51microshop.com/18187/product/20250528/ZF_SV_Series_Servo_Motor_1748410336011_0.png_w720.jpg"
+        },
+        {
+          "id": "6469242",
+          "name": "ZF General Low Power Servo Motor",
+          "url": "ZF-Universal-Small-Power-Servo-Motor-p6469242.html",
+          "image": "https://images.51microshop.com/18187/product/20250528/ZF_Universal_Small_Power_Servo_Motor_1748410151041_0.png_w720.jpg"
+        },
+        {
+          "id": "6469241",
+          "name": "ZF General High Power Servo Motor",
+          "url": "ZF-Universal-High-Power-Servo-Motor-p6469241.html",
+          "image": "https://images.51microshop.com/18187/product/20250528/ZF_Universal_High_Power_Servo_Motor_1748409848943_0.png_w720.jpg"
+        },
+        {
+          "id": "6469237",
+          "name": "ZE Series Servo Motor",
+          "url": "ZE-Series-Servo-Motor-p6469237.html",
+          "image": "https://images.51microshop.com/18187/product/20250528/ZE_Series_Servo_Motor_1748409603920_0.png_w720.jpg"
+        },
+        {
+          "id": "6469195",
+          "name": "ZE Series Embedded High-Performance Permanent Magnet Synchronous Servo Motor",
+          "url": "ZE-Series-Embedded-High-Performance-Permanent-Magnet-Synchronous-Servo-Motor-p6469195.html",
+          "image": "https://images.51microshop.com/18187/product/20250529/ZE_Series_Embedded_High_Performance_Permanent_Magnet_Synchronous_Servo_Motor_1748485945615_0.png_w720.jpg"
+        }
+      ]
+    },
+    {
+      "id": "245038",
+      "title": "Miniature Servo Motor",
+      "url": "Mininature-Servo-Motor-c245038/index.html",
+      "description": "Compact servo motors, ZKSY and YKB300 drivers, linear modules and harmonic gearboxes.",
+      "spec": "",
+      "image": "https://images.51microshop.com/18187/product/20250908/Pulse_type_Drive_ZKSY830ABS__1757318216954_0.png_w720.jpg",
+      "products": [
+        {
+          "id": "6735155",
+          "name": "Pulse - type Drive (ZKSY830ABS)",
+          "url": "Pulse-type-Drive-ZKSY830ABS-p6735155.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/Pulse_type_Drive_ZKSY830ABS__1757318216954_0.png_w720.jpg"
+        },
+        {
+          "id": "6735154",
+          "name": "EtherCAT Bus - type Drive (YKB300)",
+          "url": "EtherCAT-Bus-type-Drive-YKB300-p6735154.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/EtherCAT_Bus_type_Drive_YKB300__1757318145618_0.png_w720.jpg"
+        },
+        {
+          "id": "6735149",
+          "name": "Servo Hollow Shaft Motor",
+          "url": "Servo-Hollow-Shaft-Motor-p6735149.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/Servo_Hollow_Shaft_Motor_1757318093641_0.png_w720.jpg"
+        },
+        {
+          "id": "6735145",
+          "name": "Servo Drive Integrated Machine",
+          "url": "Servo-Drive-Integrated-Machine-p6735145.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/Servo_Drive_Integrated_Machine_1757318049058_0.png_w720.jpg"
+        },
+        {
+          "id": "6735138",
+          "name": "Servo Electric Cylinder",
+          "url": "Servo-Electric-Cylinder-p6735138.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/Servo_Electric_Cylinder_1757317999348_0.png_w720.jpg"
+        },
+        {
+          "id": "6735132",
+          "name": "Servo Ball Screw Integrated Machine",
+          "url": "Servo-Ball-Screw-Integrated-Machine-p6735132.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/Servo_Ball_Screw_Integrated_Machine_1757317948560_0.png_w720.jpg"
+        },
+        {
+          "id": "6735127",
+          "name": "Servo Reduction Integrated Machine",
+          "url": "Servo-Reduction-Integrated-Machine-p6735127.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/Servo_Reduction_Integrated_Machine_1757317878622_0.png_w720.jpg"
+        },
+        {
+          "id": "6735121",
+          "name": "Servo Slide Module",
+          "url": "Servo-Slide-Module-p6735121.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/Servo_Slide_Module_1757317795210_0.png_w720.jpg"
+        },
+        {
+          "id": "6735120",
+          "name": "Servo electric push rod",
+          "url": "Servo-electric-push-rod-p6735120.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/Servo_electric_push_rod_1757317741079_0.png_w720.jpg"
+        },
+        {
+          "id": "6735117",
+          "name": "Circular flange servo motor",
+          "url": "Circular-flange-servo-motor-p6735117.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/Circular_flange_servo_motor_1757317688902_0.png_w720.jpg"
+        },
+        {
+          "id": "6735115",
+          "name": "DD30_∅30 33W 48V",
+          "url": "DD30∅30-33W-48V-p6735115.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/DD30_30_33W_48V_1757317626419_0.png_w720.jpg"
+        },
+        {
+          "id": "6735112",
+          "name": "Servo Harmonic Reduction Integrated",
+          "url": "Servo-Harmonic-Reduction-Integrated-p6735112.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/Servo_Harmonic_Reduction_Integrated_1757317535373_0.png_w720.jpg"
+        },
+        {
+          "id": "6735107",
+          "name": "40E Brake Motor",
+          "url": "40E-Brake-Motor-p6735107.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/40E_Brake_Motor_1757317471859_0.png_w720.jpg"
+        },
+        {
+          "id": "6735104",
+          "name": "40E Motor",
+          "url": "40E-Motor-p6735104.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/40E_Motor_1757317360150_0.png_w720.jpg"
+        },
+        {
+          "id": "6735102",
+          "name": "40D Brake Motor",
+          "url": "40D-Brake-Motor-p6735102.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/40D_Brake_Motor_1757317278526_0.png_w720.jpg"
+        },
+        {
+          "id": "6735098",
+          "name": "40D Motor",
+          "url": "40D-Motor-p6735098.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/40D_Motor_1757317210344_0.png_w720.jpg"
+        },
+        {
+          "id": "6735083",
+          "name": "25E Brake Motor",
+          "url": "25E-Brake-Motor-p6735083.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/25E_Brake_Motor_1757316781707_0.png_w720.jpg"
+        },
+        {
+          "id": "6735078",
+          "name": "25E Motor_11W/22W/33W/50W 48V",
+          "url": "25E-Motor11W22W33W50W-48V-p6735078.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/25E_Motor_11W_22W_33W_50W_48V_1757316711079_0.png_w720.jpg"
+        },
+        {
+          "id": "6734985",
+          "name": "25D Motor_ 11W/22W/33W/50W 48V",
+          "url": "25D-Motor-11W22W33W50W-48V-p6734985.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/25D_Motor_11W_22W_33W_50W_48V_1757314753862_0.png_w720.jpg"
+        },
+        {
+          "id": "6734984",
+          "name": "20 Servo Motor _10~30W",
+          "url": "20-Servo-Motor-1030W-p6734984.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/20_Servo_Motor_10_30W_1757314675101_0.png_w720.jpg"
+        },
+        {
+          "id": "6734978",
+          "name": "15D Servo Motor_5W 48V",
+          "url": "15D-Servo-Motor5W-48V-p6734978.html",
+          "image": "https://images.51microshop.com/18187/product/20250908/15D_Servo_Motor_5W_48V_1757314609023_0.png_w720.jpg"
+        }
+      ]
+    },
+    {
+      "id": "237564",
+      "title": "Variable Frequency Drives (VFDs)",
+      "url": "Variable-Frequency-Drives-VFDs-c237564/index.html",
+      "description": "EV200, EV510A and EV510H series vector-control frequency drives.",
+      "spec": "",
+      "image": "https://images.51microshop.com/18187/product/20250528/EV510H_Series_High_Performance_Current_Vector_Variable_Frequency_Drives_VFDs__1748413641500_0.png_w720.jpg",
+      "products": [
+        {
+          "id": "6469297",
+          "name": "EV510H Series High-Performance Current Vector Variable Frequency Drives (VFDs)",
+          "url": "EV510H-Series-High-Performance-Current-Vector-Variable-Frequency-Drives-VFDs-p6469297.html",
+          "image": "https://images.51microshop.com/18187/product/20250528/EV510H_Series_High_Performance_Current_Vector_Variable_Frequency_Drives_VFDs__1748413641500_0.png_w720.jpg"
+        },
+        {
+          "id": "6469293",
+          "name": "EV510A Series High-Performance Current Vector Variable Frequency Drives (VFDs)",
+          "url": "EV510A-Series-High-Performance-Current-Vector-Variable-Frequency-Drives-VFDs-p6469293.html",
+          "image": "https://images.51microshop.com/18187/product/20250528/EV510A_Series_High_Performance_Current_Vector_Variable_Frequency_Drives_VFDs__1748413473184_0.png_w720.jpg"
+        },
+        {
+          "id": "6469286",
+          "name": "EV200 Series High-Performance Miniature Variable Frequency Drives (VFDs)",
+          "url": "EV200-Series-High-Performance-Miniature-Variable-Frequency-Drives-VFDs-p6469286.html",
+          "image": "https://images.51microshop.com/18187/product/20250528/EV200_Series_High_Performance_Miniature_Variable_Frequency_Drives_VFDs__1748413314257_0.png_w720.jpg"
+        }
+      ]
+    },
+    {
+      "id": "235749",
+      "title": "High Voltage Motor",
+      "url": "High-Voltage-Motor-c235749/index.html",
+      "description": "Explosion-proof and spark-proof induction motors — YBX3, YBKS, YWKK, Y2W — plus T series synchronous motors.",
+      "spec": "",
+      "image": "https://images.51microshop.com/18187/product/20250514/YWKK_high_voltage_non_sparking_three_phase_asynchronous_motor_1747192892115_0.jpg_w720.jpg",
+      "products": [
+        {
+          "id": "6442337",
+          "name": "YWKK high-voltage non-sparking three-phase asynchronous motor",
+          "url": "YWKK-high-voltage-non-sparking-three-phase-asynchronous-motor-p6442337.html",
+          "image": "https://images.51microshop.com/18187/product/20250514/YWKK_high_voltage_non_sparking_three_phase_asynchronous_motor_1747192892115_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442332",
+          "name": "YBX3 series explosion-proof high-voltage three-phase asynchronous motor",
+          "url": "YBX3-series-explosion-proof-high-voltage-three-phase-asynchronous-motor-p6442332.html",
+          "image": "https://images.51microshop.com/18187/product/20250514/YBX3_series_explosion_proof_high_voltage_three_phase_asynchronous_motor_1747192825002_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442329",
+          "name": "YBKS high-voltage explosion-proof three-phase asynchronous motor",
+          "url": "YBKS-high-voltage-explosion-proof-three-phase-asynchronous-motor-p6442329.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YBKS_high_voltage_explosion_proof_three_phase_asynchronous_motor_1746518076066_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442321",
+          "name": "YBBP series explosion-proof high-voltage variable frequency variable speed three-phase asynchronous motor",
+          "url": "YBBP-series-explosion-proof-high-voltage-variable-frequency-variable-speed-three-phase-asynchronous-motor-p6442321.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YBBP_series_explosion_proof_high_voltage_variable_frequency_variable_speed_three_phase_asynchronous_motor_1746517692637_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442308",
+          "name": "Y2W high-voltage non-sparking three-phase asynchronous motor",
+          "url": "Y2W-high-voltage-non-sparking-three-phase-asynchronous-motor-p6442308.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/Y2W_high_voltage_non_sparking_three_phase_asynchronous_motor_1746517115801_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442286",
+          "name": "T series large high-voltage three-phase synchronous motor",
+          "url": "T-series-large-high-voltage-three-phase-synchronous-motor-p6442286.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/T_series_large_high_voltage_three_phase_synchronous_motor_1746516461493_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442239",
+          "name": "YB series motor _YB2 high-voltage explosion-proof three-phase asynchronous motor",
+          "url": "YB2-high-voltage-explosion-proof-three-phase-asynchronous-motor-p6442239.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YB2_high_voltage_explosion_proof_three_phase_asynchronous_motor_1746514704245_0.jpg_w720.jpg"
+        }
+      ]
+    },
+    {
+      "id": "235748",
+      "title": "Low Voltage Motor",
+      "url": "Low-voltage-motor-c235748/index.html",
+      "description": "General-purpose induction motors across efficiency classes, with explosion-proof, dust-proof, NEPM and NEMA D versions.",
+      "spec": "",
+      "image": "https://images.51microshop.com/18187/product/20250731/YBBP_Series_Variable_Frequency_Speed_Regulation_Flame_proof_Low_voltage_Three_phase_Motor_1753941932938_0.jpg_w720.jpg",
+      "products": [
+        {
+          "id": "6659487",
+          "name": "YBBP Series Variable Frequency Speed Regulation Flame proof Low voltage Three phase Motor",
+          "url": "YBBP-Series-Variable-Frequency-Speed-Regulation-Flame-proof-Low-voltage-Three-phase-Motor-p6659487.html",
+          "image": "https://images.51microshop.com/18187/product/20250731/YBBP_Series_Variable_Frequency_Speed_Regulation_Flame_proof_Low_voltage_Three_phase_Motor_1753941932938_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442255",
+          "name": "YE5P series primary energy efficiency variable frequency speed control low-voltage three-phase asynchronous motor",
+          "url": "E5P-series-primary-energy-efficiency-variable-frequency-speed-control-low-voltage-three-phase-asynchronous-motor-p6442255.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/E5P_series_primary_energy_efficiency_variable_frequency_speed_control_low_voltage_three_phase_asynchronous_motor_1746515525804_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442253",
+          "name": "YE5 series primary energy efficiency low-voltage three-phase asynchronous motor",
+          "url": "YE5-series-primary-energy-efficiency-low-voltage-three-phase-asynchronous-motor-p6442253.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YE5_series_primary_energy_efficiency_low_voltage_three_phase_asynchronous_motor_1746515473581_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442250",
+          "name": "YE4P series secondary energy efficiency variable frequency speed control low-voltage three-phase asynchronous motor",
+          "url": "YE4P-series-secondary-energy-efficiency-variable-frequency-speed-control-low-voltage-three-phase-asynchronous-motor-p6442250.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YE4P_series_secondary_energy_efficiency_variable_frequency_speed_control_low_voltage_three_phase_asynchronous_motor_1746515417711_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442248",
+          "name": "YE4 series secondary energy efficiency low-voltage three-phase asynchronous motor",
+          "url": "YE4-series-secondary-energy-efficiency-low-voltage-three-phase-asynchronous-motor-p6442248.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YE4_series_secondary_energy_efficiency_low_voltage_three_phase_asynchronous_motor_1746515346806_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442234",
+          "name": "YE3P series three-level energy efficiency variable frequency speed control low-voltage three-phase asynchronous motor",
+          "url": "YE3P-series-three-level-energy-efficiency-variable-frequency-speed-control-low-voltage-three-phase-asynchronous-motor-p6442234.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YE3P_series_three_level_energy_efficiency_variable_frequency_speed_control_low_voltage_three_phase_asynchronous_motor_1746514805051_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442230",
+          "name": "Y2VP series variable frequency speed regulation low-voltage three-phase asynchronous motor",
+          "url": "Y2VP-series-variable-frequency-speed-regulation-low-voltage-three-phase-asynchronous-motor-p6442230.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/Y2VP_series_variable_frequency_speed_regulation_low_voltage_three_phase_asynchronous_motor_1746514642375_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442216",
+          "name": "YFB4 series two-stage energy efficient dust explosion proof low voltage three-phase induction motors",
+          "url": "YFB4-series-two-stage-energy-efficient-dust-explosion-proof-low-voltage-three-phase-induction-motors-p6442216.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YFB4_series_two_stage_energy_efficient_dust_explosion_proof_low_voltage_three_phase_induction_motors_1746514143711_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442215",
+          "name": "YFB3 series three-stage energy efficient dust proof low voltage three-phase induction motors",
+          "url": "YFB3-series-three-stage-energy-efficient-dust-proof-low-voltage-three-phase-induction-motors-p6442215.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YFB3_series_three_stage_energy_efficient_dust_proof_low_voltage_three_phase_induction_motors_1746514043273_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442213",
+          "name": "YB series motor_YBX5 series primary energy efficiency explosion-proof low-voltage three-phase asynchronous motor",
+          "url": "YBX5-series-primary-energy-efficiency-explosion-proof-low-voltage-three-phase-asynchronous-motor-p6442213.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YBX5_series_primary_energy_efficiency_explosion_proof_low_voltage_three_phase_asynchronous_motor_1746513973638_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442209",
+          "name": "YBE4 series two-stage energy efficient flameproof low voltage three-phase induction motors",
+          "url": "YBE4-series-two-stage-energy-efficient-flameproof-low-voltage-three-phase-induction-motors-p6442209.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YBE4_series_two_stage_energy_efficient_flameproof_low_voltage_three_phase_induction_motors_1746513816373_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442202",
+          "name": "NEPX series explosion-proof ultra efficient three-phase asynchronous motor",
+          "url": "NEPX-series-explosion-proof-ultra-efficient-three-phase-asynchronous-motor-p6442202.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/NEPX_series_explosion_proof_ultra_efficient_three_phase_asynchronous_motor_1746513567851_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442198",
+          "name": "NEPM ultra high efficiency three-phase asynchronous motor",
+          "url": "NEPM-ultra-high-efficiency-three-phase-asynchronous-motor-p6442198.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/NEPM_ultra_high_efficiency_three_phase_asynchronous_motor_1746513503566_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442196",
+          "name": "NEMA D design three-phase asynchronous motor",
+          "url": "NEMA-D-design-three-phase-asynchronous-motor-p6442196.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/NEMA_D_design_three_phase_asynchronous_motor_1746513418727_0.jpg_w720.jpg"
+        }
+      ]
+    },
+    {
+      "id": "235750",
+      "title": "Permanent Magnet motor",
+      "url": "Permanent-Magnet-Motor-c235750/index.html",
+      "description": "TYP1, TYCPX, TPTYC and TYJX permanent-magnet synchronous motors, including an explosion-proof version.",
+      "spec": "",
+      "image": "https://images.51microshop.com/18187/product/20250506/TYJX_TYC_series_self_starting_three_phase_permanent_magnet_synchronous_motor_1746516176314_0.jpg_w720.jpg",
+      "products": [
+        {
+          "id": "6442274",
+          "name": "TYJX (TYC) series self starting three-phase permanent magnet synchronous motor",
+          "url": "TYJX-TYC-series-self-starting-three-phase-permanent-magnet-synchronous-motor-p6442274.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/TYJX_TYC_series_self_starting_three_phase_permanent_magnet_synchronous_motor_1746516176314_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442272",
+          "name": "TBYP1 series primary energy efficiency explosion-proof variable frequency speed regulation three-phase permanent magnet synchronous motor",
+          "url": "TBYP1-series-primary-energy-efficiency-explosion-proof-variable-frequency-speed-regulation-three-phase-permanent-magnet-synchronous-motor-p6442272.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/TBYP1_series_primary_energy_efficiency_explosion_proof_variable_frequency_speed_regulation_three_phase_permanent_magnet_synchronous_motor_1746516124419_0.JPG_w720.jpg"
+        },
+        {
+          "id": "6442270",
+          "name": "TPTYC series variable frequency speed regulation three-phase permanent magnet synchronous motor",
+          "url": "TPTYC-series-variable-frequency-speed-regulation-three-phase-permanent-magnet-synchronous-motor-p6442270.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/TPTYC_series_variable_frequency_speed_regulation_three_phase_permanent_magnet_synchronous_motor_1746516070646_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442267",
+          "name": "TYCPX series low-speed direct drive permanent magnet synchronous motor",
+          "url": "TYCPX-series-low-speed-direct-drive-permanent-magnet-synchronous-motor-p6442267.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/TYCPX_series_low_speed_direct_drive_permanent_magnet_synchronous_motor_1746516011191_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442266",
+          "name": "TYP1 series primary energy efficiency variable frequency speed regulation three-phase permanent magnet synchronous motor",
+          "url": "TYP1-series-primary-energy-efficiency-variable-frequency-speed-regulation-three-phase-permanent-magnet-synchronous-motor-p6442266.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/TYP1_series_primary_energy_efficiency_variable_frequency_speed_regulation_three_phase_permanent_magnet_synchronous_motor_1746515948631_0.jpg_w720.jpg"
+        }
+      ]
+    },
+    {
+      "id": "235747",
+      "title": "DC Motor",
+      "url": "DC-motor-c235747/index.html",
+      "description": "Z, Z4, Z710 and ZZJ series DC motors, including drilling-rig and frequent-start versions.",
+      "spec": "",
+      "image": "https://images.51microshop.com/18187/product/20250506/1746510923291_0.jpg_w720.jpg",
+      "products": [
+        {
+          "id": "6442101",
+          "name": "HJ08 Separately Excited DC Motor for Oilfield Drilling",
+          "url": "HJ08-Separately-Excited-DC-Motor-for-Oilfield-Drilling-p6442101.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/1746510923291_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442112",
+          "name": "DC Motor for HZJ Positive Pressure Drilling Platform",
+          "url": "DC-Motor-for-HZJ-Positive-Pressure-Drilling-Platform-p6442112.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/DC_Motor_for_HZJ_Positive_Pressure_Drilling_Platform_1746512199124_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442246",
+          "name": "Z4 series DC motor",
+          "url": "Z4-series-DC-motor-p6442246.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/Z4_series_DC_motor_1746517908228_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442257",
+          "name": "Z710 DC Motor",
+          "url": "Z710-DC-Motor-p6442257.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/Z710_DC_Motor_1746515558708_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442260",
+          "name": "ZFQZ type frequent start braking DC motor",
+          "url": "ZFQZ-type-frequent-start-braking-DC-motor-p6442260.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/ZFQZ_type_frequent_start_braking_DC_motor_1746515723280_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442264",
+          "name": "ZJ500-1000 Separately Excited DC Motor for Oilfield Drilling",
+          "url": "ZJ500-1000-Separately-Excited-DC-Motor-for-Oilfield-Drilling-p6442264.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/ZJ500_1000_Separately_Excited_DC_Motor_for_Oilfield_Drilling_1746515869264_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442269",
+          "name": "ZZJ-800 series rolling mill auxiliary transmission DC motor",
+          "url": "ZZJ-800-series-rolling-mill-auxiliary-transmission-DC-motor-p6442269.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/ZZJ_800_series_rolling_mill_auxiliary_transmission_DC_motor_1746516018804_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442275",
+          "name": "Z series medium DC motor",
+          "url": "Z-series-medium-DC-motor-p6442275.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/Z_series_medium_DC_motor_1746516172675_0.jpg_w720.jpg"
+        }
+      ]
+    },
+    {
+      "id": "235751",
+      "title": "Special Motor",
+      "url": "Special-Motor-c235751/index.html",
+      "description": "Crane, lifting, roller-table, marine and high-temperature motors — YZP, YGP, Y-H, YLM.",
+      "spec": "",
+      "image": "https://images.51microshop.com/18187/product/20250506/YLM_series_high_temperature_water_cooled_motor_1746517514119_0.jpg_w720.jpg",
+      "products": [
+        {
+          "id": "6442318",
+          "name": "YLM series high-temperature water-cooled motor",
+          "url": "YLM-series-high-temperature-water-cooled-motor-p6442318.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YLM_series_high_temperature_water_cooled_motor_1746517514119_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442317",
+          "name": "YE2G high-temperature resistant and high-efficiency three-phase asynchronous motor",
+          "url": "YE2G-high-temperature-resistant-and-high-efficiency-three-phase-asynchronous-motor-p6442317.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YE2G_high_temperature_resistant_and_high_efficiency_three_phase_asynchronous_motor_1746517462131_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442316",
+          "name": "YDTG high-temperature resistant fan dedicated variable pole majority three-phase asynchronous motor",
+          "url": "YDTG-high-temperature-resistant-fan-dedicated-variable-pole-majority-three-phase-asynchronous-motor-p6442316.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YDTG_high_temperature_resistant_fan_dedicated_variable_pole_majority_three_phase_asynchronous_motor_1746517401019_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442312",
+          "name": "Y-H series marine three-phase asynchronous motor",
+          "url": "Y-H-series-marine-three-phase-asynchronous-motor-p6442312.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/Y_H_series_marine_three_phase_asynchronous_motor_1746517312855_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442310",
+          "name": "Special motor_YZR series winding rotor three-phase asynchronous motor for lifting and metallurgical purposes",
+          "url": "YZR-series-winding-rotor-three-phase-asynchronous-motor-for-lifting-and-metallurgical-purposes-p6442310.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YZR_series_winding_rotor_three_phase_asynchronous_motor_for_lifting_and_metallurgical_purposes_1746517233176_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442307",
+          "name": "YZP Crane Variable Frequency Speed Control Motor",
+          "url": "YZP-Crane-Variable-Frequency-Speed-Control-Motor-p6442307.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YZP_Crane_Variable_Frequency_Speed_Control_Motor_1746517165799_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442306",
+          "name": "YZP2 series variable frequency variable speed three-phase asynchronous motor for lifting and metallurgical purposes",
+          "url": "YZP2-series-variable-frequency-variable-speed-three-phase-asynchronous-motor-for-lifting-and-metallurgical-purposes-p6442306.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YZP2_series_variable_frequency_variable_speed_three_phase_asynchronous_motor_for_lifting_and_metallurgical_purposes_1746517110351_0.jpg_w720.jpg"
+        },
+        {
+          "id": "6442301",
+          "name": "YGP series rolling mill variable frequency speed control three-phase asynchronous motor",
+          "url": "YGP-series-rolling-mill-variable-frequency-speed-control-three-phase-asynchronous-motor-p6442301.html",
+          "image": "https://images.51microshop.com/18187/product/20250506/YGP_series_rolling_mill_variable_frequency_speed_control_three_phase_asynchronous_motor_1746516859133_0.jpg_w720.jpg"
+        }
+      ]
+    }
+  ]
+}

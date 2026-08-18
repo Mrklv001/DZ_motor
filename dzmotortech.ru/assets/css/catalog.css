@@ -1,0 +1,697 @@
+/* ==========================================================================
+   Каталог продукции Dazhong Motor — самостоятельные стили страницы.
+   Всё под префиксом .dzc-, чтобы не конфликтовать с bootstrap 3.3.5
+   и платформенным css.css, которые подключены на той же странице.
+   Внешних зависимостей нет: шрифт Montserrat уже self-hosted в fonts.css.
+   ========================================================================== */
+
+.dzc {
+  --dzc-ink: #0d1f2d;
+  --dzc-ink-deep: #081620;
+  --dzc-ink-soft: #17323f;
+  --dzc-paper: #f2f3f2;
+  --dzc-surface: #ffffff;
+  --dzc-accent: #00aeef;
+  --dzc-accent-dim: rgba(0, 174, 239, 0.14);
+  --dzc-steel-100: #e4e7e9;
+  --dzc-steel-300: #c6ccd0;
+  --dzc-steel-500: #7b8891;
+  --dzc-steel-700: #46545e;
+
+  --dzc-shell: 1580px;
+  --dzc-gutter: 25px;
+  --dzc-radius: 24px;
+  --dzc-radius-sm: 12px;
+  --dzc-mono: ui-monospace, "SF Mono", SFMono-Regular, "Roboto Mono", Menlo, Consolas, monospace;
+  --dzc-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  background: var(--dzc-paper);
+  color: var(--dzc-ink);
+  overflow-x: clip;
+}
+
+.dzc *,
+.dzc *::before,
+.dzc *::after { box-sizing: border-box; }
+
+.dzc__shell {
+  width: 100%;
+  max-width: var(--dzc-shell);
+  margin: 0 auto;
+  padding: 0 var(--dzc-gutter);
+}
+
+.dzc a { text-decoration: none; }
+
+.dzc :focus-visible {
+  outline: 3px solid var(--dzc-accent);
+  outline-offset: 3px;
+}
+
+/* --- типографика -------------------------------------------------------- */
+
+.dzc__display {
+  margin: 0;
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.dzc__lede {
+  margin: 0;
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.6;
+  color: var(--dzc-steel-700);
+}
+
+/* --- шильдик: подпись-табличка, как на корпусе двигателя ----------------- */
+
+.dzc-plate {
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: stretch;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 4px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.dzc-plate__cell {
+  padding: 10px 18px;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  font-family: var(--dzc-mono) !important;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.dzc-plate__cell:last-child { border-right: 0; }
+
+.dzc-plate__value {
+  display: block;
+  margin-top: 5px;
+  text-transform: none;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.dzc-plate--light {
+  border-color: var(--dzc-steel-300);
+  background: linear-gradient(160deg, #fff, #eceef0);
+  box-shadow: inset 0 1px 0 #fff;
+}
+
+.dzc-plate--light .dzc-plate__cell {
+  border-right-color: var(--dzc-steel-300);
+  color: var(--dzc-steel-500);
+}
+
+.dzc-plate--light .dzc-plate__value { color: var(--dzc-ink); }
+
+/* --- первый экран ------------------------------------------------------- */
+
+.dzc-hero {
+  position: relative;
+  background: var(--dzc-ink);
+  color: #fff;
+  overflow: hidden;
+}
+
+.dzc-hero__media {
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/catalog-hero.jpg") center / cover no-repeat;
+  opacity: 0.5;
+}
+
+@media (max-width: 780px) {
+  .dzc-hero__media { background-image: url("/assets/images/catalog-hero-900.jpg"); }
+}
+
+.dzc-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, var(--dzc-ink) 12%, rgba(13, 31, 45, 0.86) 46%, rgba(13, 31, 45, 0.35) 100%),
+    linear-gradient(to top, var(--dzc-ink) 2%, transparent 40%);
+}
+
+.dzc-hero__inner {
+  position: relative;
+  padding: clamp(48px, 5vw, 76px) 0 clamp(36px, 3.4vw, 52px);
+}
+
+.dzc-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 26px;
+  max-width: 760px;
+}
+
+.dzc-hero__title {
+  font-size: clamp(28px, 3.4vw, 52px);
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.dzc-hero__title em {
+  font-style: normal;
+  color: var(--dzc-accent);
+}
+
+.dzc-hero__lede {
+  max-width: 56ch;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.dzc-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.dzc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 26px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background-color 0.18s var(--dzc-ease), color 0.18s var(--dzc-ease),
+    border-color 0.18s var(--dzc-ease), transform 0.18s var(--dzc-ease);
+}
+
+.dzc-btn--primary {
+  background: var(--dzc-accent);
+  color: #04222e;
+}
+
+.dzc-btn--primary:hover,
+.dzc-btn--primary:focus { background: #33c1f3; color: #04222e; transform: translateY(-1px); }
+
+.dzc-btn--ghost {
+  border-color: rgba(255, 255, 255, 0.34);
+  color: #fff;
+}
+
+.dzc-btn--ghost:hover,
+.dzc-btn--ghost:focus { border-color: #fff; color: #fff; background: rgba(255, 255, 255, 0.08); }
+
+.dzc-btn--ink {
+  border-color: var(--dzc-steel-300);
+  color: var(--dzc-ink);
+  background: var(--dzc-surface);
+}
+
+.dzc-btn--ink:hover,
+.dzc-btn--ink:focus { border-color: var(--dzc-ink); color: var(--dzc-ink); }
+
+.dzc-hero__plate { margin-top: 8px; }
+
+/* --- преимущества ------------------------------------------------------- */
+
+.dzc-section { padding: clamp(56px, 6vw, 96px) 0; }
+
+.dzc-section__head {
+  display: grid;
+  gap: 14px;
+  max-width: 720px;
+  margin-bottom: clamp(32px, 3.4vw, 52px);
+}
+
+.dzc-section__title {
+  font-size: clamp(26px, 2.8vw, 40px);
+}
+
+.dzc-why {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--dzc-steel-300);
+  border: 1px solid var(--dzc-steel-300);
+  border-radius: var(--dzc-radius);
+  overflow: hidden;
+}
+
+.dzc-why__item {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding: clamp(24px, 2.4vw, 36px);
+  background: var(--dzc-surface);
+}
+
+.dzc-why__icon { color: var(--dzc-accent); }
+
+.dzc-why__title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.dzc-why__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--dzc-steel-700);
+}
+
+/* --- микропанель категорий ---------------------------------------------- */
+
+.dzc-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.dzc-tile {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 16px;
+  padding: 16px 16px 20px;
+  border: 1px solid var(--dzc-steel-300);
+  border-radius: var(--dzc-radius);
+  background: var(--dzc-surface);
+  color: inherit;
+  transition: border-color 0.18s var(--dzc-ease), transform 0.18s var(--dzc-ease),
+    box-shadow 0.18s var(--dzc-ease);
+}
+
+.dzc-tile:hover,
+.dzc-tile:focus {
+  border-color: var(--dzc-ink);
+  color: inherit;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px -22px rgba(13, 31, 45, 0.55);
+}
+
+.dzc-tile__media {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--dzc-radius-sm);
+  background: var(--dzc-surface) center / cover no-repeat;
+  border: 1px solid var(--dzc-steel-100);
+}
+
+.dzc-tile__body { display: grid; gap: 6px; align-content: start; }
+
+.dzc-tile__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Подписи с данными — количеством моделей и мощностью. Раньше они были
+   моноширинными и бледными; теперь это тот же Montserrat, что и в тексте,
+   на полтона темнее фоновых подписей. */
+.dzc-meta {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  color: var(--dzc-steel-700);
+}
+
+.dzc-tile__meta {
+  font-size: 12px;
+}
+
+/* --- липкая панель: чипы категорий + поиск ------------------------------ */
+
+.dzc-bar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 12px 0;
+  border-top: 1px solid var(--dzc-steel-300);
+  border-bottom: 1px solid var(--dzc-steel-300);
+  background: rgba(242, 243, 242, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.dzc-bar__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 16px;
+  align-items: center;
+}
+
+.dzc-chips-wrap { position: relative; min-width: 0; }
+
+.dzc-chips-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 42px;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(242, 243, 242, 0), rgba(242, 243, 242, 0.96));
+}
+
+.dzc-chips {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 2px 0;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: thin;
+}
+
+.dzc-chip {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid var(--dzc-steel-300);
+  border-radius: 999px;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dzc-steel-700);
+  background: var(--dzc-surface);
+  transition: color 0.18s var(--dzc-ease), border-color 0.18s var(--dzc-ease),
+    background-color 0.18s var(--dzc-ease);
+}
+
+.dzc-chip:hover,
+.dzc-chip:focus { color: var(--dzc-ink); border-color: var(--dzc-ink); }
+
+.dzc-chip.is-active {
+  color: #fff;
+  background: var(--dzc-ink);
+  border-color: var(--dzc-ink);
+}
+
+.dzc-bar__count {
+  grid-column: 1 / -1;
+  margin: 2px 0 0;
+  font-family: var(--dzc-mono) !important;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--dzc-steel-500);
+}
+
+.dzc-bar__count[hidden] { display: none; }
+
+.dzc-search { position: relative; }
+
+.dzc-search__input {
+  width: 100%;
+  height: 42px;
+  padding: 0 38px 0 40px;
+  border: 1px solid var(--dzc-steel-300);
+  border-radius: 999px;
+  background: var(--dzc-surface);
+  font-size: 14px;
+  color: var(--dzc-ink);
+  transition: border-color 0.18s var(--dzc-ease), box-shadow 0.18s var(--dzc-ease);
+}
+
+.dzc-search__input:focus {
+  border-color: var(--dzc-accent);
+  box-shadow: 0 0 0 4px var(--dzc-accent-dim);
+  outline: none;
+}
+
+.dzc-search__icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: var(--dzc-steel-500);
+  pointer-events: none;
+}
+
+.dzc-search__clear {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  display: none;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
+  background: var(--dzc-steel-100);
+  color: var(--dzc-steel-700);
+  font-size: 15px;
+  line-height: 26px;
+  cursor: pointer;
+}
+
+.dzc-search__clear.is-visible { display: block; }
+
+/* --- секции категорий --------------------------------------------------- */
+
+.dzc-cat {
+  padding: clamp(48px, 5vw, 82px) 0;
+  border-top: 1px solid var(--dzc-steel-300);
+  scroll-margin-top: 84px;
+}
+
+.dzc-cat__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: clamp(28px, 3vw, 56px);
+  align-items: start;
+}
+
+/* В чётных секциях фотография уходит вправо — вместе с ней меняется и
+   раскладка колонок, иначе узкой становилась бы текстовая часть. */
+.dzc-cat--flip .dzc-cat__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 360px); }
+
+.dzc-cat--flip .dzc-cat__media { order: 2; }
+
+.dzc-cat__media {
+  position: sticky;
+  top: 96px;
+  display: grid;
+  gap: 14px;
+}
+
+.dzc-cat__frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--dzc-radius);
+  /* Фотографии заранее приведены к одному белому фону (tools/prepare_images.py),
+     поэтому кадр можно заполнять целиком — рамка везде выглядит одинаково. */
+  background: var(--dzc-surface) center / cover no-repeat;
+  border: 1px solid var(--dzc-steel-300);
+  overflow: hidden;
+}
+
+.dzc-cat__head { display: grid; gap: 16px; margin-bottom: 26px; }
+
+.dzc-cat__meta { margin: 0; }
+
+.dzc-cat__title {
+  font-size: clamp(24px, 2.5vw, 38px);
+}
+
+.dzc-cat__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--dzc-steel-300);
+}
+
+.dzc-item { border-bottom: 1px solid var(--dzc-steel-300); }
+
+.dzc-item__link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 4px 18px 0;
+  color: var(--dzc-ink);
+  transition: padding-left 0.2s var(--dzc-ease), color 0.18s var(--dzc-ease);
+}
+
+.dzc-item__link:hover,
+.dzc-item__link:focus {
+  padding-left: 12px;
+  color: var(--dzc-ink);
+}
+
+.dzc-item__link:hover .dzc-item__arrow,
+.dzc-item__link:focus .dzc-item__arrow {
+  color: #fff;
+  background: var(--dzc-accent);
+  border-color: var(--dzc-accent);
+}
+
+.dzc-item__name {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.dzc-item__spec {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.dzc-item__arrow {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--dzc-steel-300);
+  border-radius: 50%;
+  color: var(--dzc-steel-700);
+  transition: color 0.18s var(--dzc-ease), background-color 0.18s var(--dzc-ease),
+    border-color 0.18s var(--dzc-ease);
+}
+
+/* Списки в категориях держим короткими: сверх пятой позиции строки скрыты,
+   пока раздел не раскрыт кнопкой. Скрытие через :nth-child, поэтому поиск,
+   который прячет неподходящие строки классом, продолжает работать. */
+.dzc-cat__list > .dzc-item:nth-child(n + 6) { display: none; }
+
+.dzc-cat.is-expanded .dzc-cat__list > .dzc-item:nth-child(n + 6),
+.dzc.is-searching .dzc-cat__list > .dzc-item:nth-child(n + 6) { display: block; }
+
+/* Во время поиска раскрываем все списки, чтобы совпадения не остались
+   под кнопкой, а саму кнопку убираем. */
+.dzc.is-searching .dzc-more { display: none; }
+
+/* Правило поиска идёт последним и с той же специфичностью — скрытая
+   поиском строка не всплывает из-за раскрытия списка. */
+.dzc.is-searching .dzc-cat__list > .dzc-item.is-hidden,
+.dzc-cat.is-expanded .dzc-cat__list > .dzc-item.is-hidden,
+.dzc-cat__list > .dzc-item.is-hidden { display: none; }
+
+.dzc-cat__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 26px;
+  margin-top: 22px;
+}
+
+.dzc-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--dzc-steel-300);
+  border-radius: 999px;
+  background: var(--dzc-surface);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dzc-ink);
+  cursor: pointer;
+  transition: border-color 0.18s var(--dzc-ease), background-color 0.18s var(--dzc-ease);
+}
+
+.dzc-more:hover,
+.dzc-more:focus { border-color: var(--dzc-ink); background: var(--dzc-paper); }
+
+.dzc-cat__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dzc-ink);
+  border-bottom: 1px solid var(--dzc-accent);
+  padding-bottom: 2px;
+}
+
+.dzc-cat__all:hover,
+.dzc-cat__all:focus { color: var(--dzc-accent); }
+
+/* --- поиск: скрытые состояния ------------------------------------------- */
+
+.dzc-item.is-hidden,
+.dzc-cat.is-hidden,
+.dzc-tile.is-hidden,
+.dzc-chip.is-hidden,
+.dzc-section.is-hidden { display: none; }
+
+.dzc-empty {
+  display: none;
+  padding: 60px 0 20px;
+  text-align: center;
+}
+
+.dzc-empty.is-visible { display: block; }
+
+.dzc-empty__title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* --- закрывающий блок --------------------------------------------------- */
+
+.dzc-closing {
+  margin: 0 0 clamp(48px, 5vw, 80px);
+}
+
+.dzc-closing__box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding: clamp(32px, 4vw, 56px);
+  border-radius: var(--dzc-radius);
+  background: var(--dzc-ink);
+  color: #fff;
+}
+
+.dzc-closing__title {
+  font-size: clamp(22px, 2.2vw, 34px);
+  color: #fff;
+}
+
+.dzc-closing__text {
+  margin: 12px 0 0;
+  max-width: 60ch;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* --- адаптив ------------------------------------------------------------ */
+
+@media (max-width: 1180px) {
+  .dzc-why { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dzc-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .dzc-bar__inner { grid-template-columns: minmax(0, 1fr); }
+  .dzc-cat__grid,
+  .dzc-cat--flip .dzc-cat__grid { grid-template-columns: minmax(0, 1fr); }
+  .dzc-cat--flip .dzc-cat__media { order: 0; }
+  .dzc-cat__media { position: static; }
+  .dzc-cat__frame { aspect-ratio: 16 / 10; }
+  .dzc-closing__box { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 680px) {
+  .dzc { --dzc-gutter: 18px; }
+  .dzc-why { grid-template-columns: minmax(0, 1fr); }
+  .dzc-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dzc-plate { grid-auto-flow: row; width: 100%; }
+  .dzc-plate__cell { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
+  .dzc-plate__cell:last-child { border-bottom: 0; }
+  .dzc-plate--light .dzc-plate__cell { border-bottom-color: var(--dzc-steel-300); }
+  .dzc-hero__actions .dzc-btn { flex: 1 1 auto; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dzc * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  .dzc { scroll-behavior: auto; }
+}

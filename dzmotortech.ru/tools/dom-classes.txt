@@ -1,0 +1,10 @@
+# Классы и id, которые появляются на карточках только во время работы скриптов
+# (swiper, Bitrix-детект браузера) и потому не встречаются в HTML.
+# Список снят из живого DOM карточки; пополняется вручную при необходимости.
+bx-chrome bx-core bx-mac bx-no-touch bx-retina bx-firefox bx-safari bx-android bx-ios bx-win bx-touch
+swiper swiper-initialized swiper-horizontal swiper-vertical swiper-backface-hidden
+swiper-wrapper swiper-slide swiper-slide-active swiper-slide-next swiper-slide-prev
+swiper-pagination swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullets
+swiper-pagination-clickable swiper-pagination-horizontal swiper-pagination-vertical
+swiper-pagination-lock swiper-button-prev swiper-button-next swiper-button-disabled
+swiper-button-lock swiper-notification swiper-lazy swiper-lazy-loaded
