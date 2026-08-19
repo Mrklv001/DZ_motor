@@ -1685,3 +1685,68 @@ body.page-en[data-template="index"] #gallery-jigsaw-b_8 { order: 8 !important; }
   transform: translateY(-1px);
   box-shadow: 0 10px 20px -10px rgba(26, 43, 74, 0.75);
 }
+
+/* 7. «Новости и события» убраны из меню шапки — и в десктопной строке, и в
+   мобильном списке. Сам раздел блога остаётся доступен: ссылки на него есть
+   в подвале. Совпадение по части заголовка, потому что в английской версии
+   у пункта title с ведущим пробелом (" News"). */
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title*="Новости"]),
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title*="News"]),
+#sidebar-main .wrapper > ul > li:has(> a.phone_navigation[title*="Новости"]),
+#sidebar-main .wrapper > ul > li:has(> a.phone_navigation[title*="News"]) {
+  display: none !important;
+}
+
+/* 8. Живая навигация в шапке: подсветка, скользящая за курсором, и мягкое
+   появление выпадающих списков вместо мгновенного показа. Всё включается
+   классом dz-nav-js, который ставит assets/js/nav.js, — без скрипта меню
+   работает по-старому. */
+#header .nav_bar .nav_first { position: relative; }
+
+#header .nav_bar .nav_first > li.nav_list { position: relative; z-index: 1; }
+
+.dz-nav-hl {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 0;
+  width: 0;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(26, 43, 74, 0.07);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(0, -50%);
+  transition: transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1),
+              width 0.28s cubic-bezier(0.22, 0.61, 0.36, 1),
+              opacity 0.18s ease;
+}
+
+.dz-nav-hl.is-visible { opacity: 1; }
+
+.dz-nav-js .nav_first > li.nav_list > .nav_children_wrap {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(calc(-50% + var(--dz-dx, 0px))) translateY(-8px) scale(0.98);
+  transform-origin: top center;
+  transition: opacity 0.2s ease,
+              transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1),
+              visibility 0s linear 0.28s;
+}
+
+.dz-nav-js .nav_first > li.nav_list.dz-open > .nav_children_wrap {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0) scale(1);
+  transition: opacity 0.2s ease,
+              transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1),
+              visibility 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dz-nav-hl,
+  .dz-nav-js .nav_first > li.nav_list > .nav_children_wrap {
+    transition-duration: 0.01ms !important;
+  }
+}
