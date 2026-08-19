@@ -21,7 +21,7 @@ SKIP_DIRS = {".git", "node_modules", "admin", "leads_uploads", "tools"}
 
 NAV_LINK = re.compile(
     r'(<a class="(?:navigation|phone_navigation)" href="((?:\.\./)*))all-products\.html'
-    r'(" title="(?:Продукция|Product)")'
+    r'(" data-nav="(?:Продукция|Product)")'
 )
 
 

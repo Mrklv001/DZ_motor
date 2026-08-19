@@ -1648,21 +1648,21 @@ body.page-en[data-template="index"] #gallery-jigsaw-b_8 { order: 8 !important; }
    Ведёт прямо в каталог, поэтому выпадающий список ему не нужен: он перекрывал
    страницу и уводил мимо каталога. Пункт вынесен первым и оформлен кнопкой,
    чтобы сразу считывался как основное действие. */
-#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title="Продукция"]) .nav_children_wrap,
-#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title="Product"]) .nav_children_wrap {
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[data-nav="Продукция"]) .nav_children_wrap,
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[data-nav="Product"]) .nav_children_wrap {
   display: none !important;
 }
 
-#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title="Продукция"]),
-#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title="Product"]) {
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[data-nav="Продукция"]),
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[data-nav="Product"]) {
   /* Пункт стоит первым в самой разметке (tools/reorder_nav.py); здесь только
      выравнивание кнопки по центру шапки. */
   display: flex;
   align-items: center;
 }
 
-#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Продукция"],
-#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Product"] {
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[data-nav="Продукция"],
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[data-nav="Product"] {
   /* у остальных пунктов line-height: 100px — для кнопки его нужно сбросить */
   line-height: 1;
   padding: 12px 24px;
@@ -1675,10 +1675,10 @@ body.page-en[data-template="index"] #gallery-jigsaw-b_8 { order: 8 !important; }
   transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
 
-#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Продукция"]:hover,
-#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Product"]:hover,
-#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Продукция"]:focus-visible,
-#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Product"]:focus-visible {
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[data-nav="Продукция"]:hover,
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[data-nav="Product"]:hover,
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[data-nav="Продукция"]:focus-visible,
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[data-nav="Product"]:focus-visible {
   background: #24395f;
   color: #fff;
   text-decoration: none;
@@ -1690,10 +1690,10 @@ body.page-en[data-template="index"] #gallery-jigsaw-b_8 { order: 8 !important; }
    мобильном списке. Сам раздел блога остаётся доступен: ссылки на него есть
    в подвале. Совпадение по части заголовка, потому что в английской версии
    у пункта title с ведущим пробелом (" News"). */
-#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title*="Новости"]),
-#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title*="News"]),
-#sidebar-main .wrapper > ul > li:has(> a.phone_navigation[title*="Новости"]),
-#sidebar-main .wrapper > ul > li:has(> a.phone_navigation[title*="News"]) {
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[data-nav*="Новости"]),
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[data-nav*="News"]),
+#sidebar-main .wrapper > ul > li:has(> a.phone_navigation[data-nav*="Новости"]),
+#sidebar-main .wrapper > ul > li:has(> a.phone_navigation[data-nav*="News"]) {
   display: none !important;
 }
 

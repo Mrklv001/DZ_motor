@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {".git", "node_modules", "admin", "tools", "leads_uploads"}
 
 UL_OPEN = re.compile(r'<ul class="nav_first[^"]*"[^>]*>')
-TITLES = ('title="Продукция"', 'title="Product"')
+TITLES = ('data-nav="Продукция"', 'data-nav="Product"')
 
 
 def block_end(html: str, start: int, tag: str) -> int:

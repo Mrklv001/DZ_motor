@@ -32,7 +32,7 @@
     function isButton(li) {
       // Пункт-кнопка «Продукция» уже залит цветом — подсветка ему не нужна.
       var link = li.querySelector(':scope > a.navigation');
-      var title = (link && link.getAttribute('title')) || '';
+      var title = (link && link.getAttribute('data-nav')) || '';
       return /Продукция|Product/.test(title);
     }
 
