@@ -663,6 +663,42 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
+/* --- кнопка «наверх» ----------------------------------------------------- */
+
+.dzc-top {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 174, 239, 0.9);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 174, 239, 0.35);
+  backdrop-filter: blur(8px);
+  /* До появления кнопка не должна перехватывать клики по странице. */
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s var(--dzc-ease), transform 0.25s var(--dzc-ease),
+    background-color 0.18s var(--dzc-ease);
+}
+
+.dzc-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dzc-top:hover,
+.dzc-top:focus-visible { background: rgba(0, 174, 239, 1); }
+
 /* --- адаптив ------------------------------------------------------------ */
 
 @media (max-width: 1180px) {
@@ -682,6 +718,7 @@
 
 @media (max-width: 680px) {
   .dzc { --dzc-gutter: 18px; }
+  .dzc-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
   .dzc-why { grid-template-columns: minmax(0, 1fr); }
   .dzc-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dzc-plate { grid-auto-flow: row; width: 100%; }

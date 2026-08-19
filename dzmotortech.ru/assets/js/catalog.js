@@ -127,6 +127,21 @@
     });
   });
 
+  /* --- кнопка «наверх» --------------------------------------------------- */
+
+  var topButton = root.querySelector('[data-dzc-top]');
+  if (topButton) {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    window.addEventListener('scroll', function () {
+      topButton.classList.toggle('is-visible', window.scrollY > 400);
+    }, { passive: true });
+
+    topButton.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    });
+  }
+
   /* --- подсветка активной категории ------------------------------------- */
 
   var chipStrip = root.querySelector('[data-dzc-chips]');

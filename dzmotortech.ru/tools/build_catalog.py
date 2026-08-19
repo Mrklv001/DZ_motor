@@ -107,6 +107,7 @@ TEXT = {
         "voltage_unit_kv": "кВ",
         "voltage_unit_v": "В",
         "arrow_label": "Открыть страницу модели",
+        "to_top": "Наверх",
     },
     "en": {
         "source": "en/all-products.html",
@@ -188,6 +189,7 @@ TEXT = {
         "voltage_unit_kv": "kV",
         "voltage_unit_v": "V",
         "arrow_label": "Open model page",
+        "to_top": "Back to top",
     },
 }
 
@@ -598,6 +600,17 @@ def render_closing(lang: str, words: dict) -> str:
   </section>"""
 
 
+def render_top_button(words: dict) -> str:
+    return f"""
+  <button class="dzc-top" type="button" data-dzc-top aria-label="{esc(words["to_top"])}"
+          title="{esc(words["to_top"])}">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>"""
+
+
 def render_breadcrumb(words: dict) -> str:
     return f"""
   <div class="dzc__shell" style="padding-top:18px;padding-bottom:2px;">
@@ -688,6 +701,7 @@ def build(lang: str) -> None:
         render_bar(words, categories, summary),
         render_categories(lang, words, categories),
         render_closing(lang, words),
+        render_top_button(words),
         "</main>",
         "",
     ])

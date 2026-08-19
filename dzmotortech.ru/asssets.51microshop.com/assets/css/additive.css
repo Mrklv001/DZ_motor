@@ -1644,4 +1644,44 @@ body.page-en[data-template="index"] #gallery_18187_b_6  { order: 6 !important; }
 body.page-en[data-template="index"] #gallery-jigsaw-b_7 { order: 7 !important; }
 body.page-en[data-template="index"] #gallery-jigsaw-b_8 { order: 8 !important; }
 
+/* 6. Меню «Продукция» — главный пункт шапки.
+   Ведёт прямо в каталог, поэтому выпадающий список ему не нужен: он перекрывал
+   страницу и уводил мимо каталога. Пункт вынесен первым и оформлен кнопкой,
+   чтобы сразу считывался как основное действие. */
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title="Продукция"]) .nav_children_wrap,
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title="Product"]) .nav_children_wrap {
+  display: none !important;
+}
 
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title="Продукция"]),
+#header .nav_bar .nav_first > li.nav_list:has(> a.navigation[title="Product"]) {
+  /* Пункт стоит первым в самой разметке (tools/reorder_nav.py); здесь только
+     выравнивание кнопки по центру шапки. */
+  display: flex;
+  align-items: center;
+}
+
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Продукция"],
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Product"] {
+  /* у остальных пунктов line-height: 100px — для кнопки его нужно сбросить */
+  line-height: 1;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #1a2b4a;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 16px -8px rgba(26, 43, 74, 0.85);
+  transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Продукция"]:hover,
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Product"]:hover,
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Продукция"]:focus-visible,
+#header .header_box .nav_bar .nav_first > li.nav_list > a.navigation[title="Product"]:focus-visible {
+  background: #24395f;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px -10px rgba(26, 43, 74, 0.75);
+}
