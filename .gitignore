@@ -2,3 +2,5 @@ ADMIN_README.md
 deploy
 .claude
 .DS_Store
+__pycache__
+*.pyc
