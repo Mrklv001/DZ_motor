@@ -1,0 +1,322 @@
+/* ==========================================================================
+   Страница «Области применения». Было — пять платформенных галерей подряд,
+   все карточки вели на профиль компании. Стало — пять отраслевых разворотов
+   в шахматном порядке: слева задача отрасли и ссылки на подходящие серии,
+   справа мозаика из трёх объектов. Префикс dzu-.
+   ========================================================================== */
+
+.dzu {
+  --u-ink: #0d1f2d;
+  --u-ink-deep: #081620;
+  --u-paper: #f2f3f2;
+  --u-surface: #ffffff;
+  --u-accent: #00aeef;
+  --u-steel-100: #e4e7e9;
+  --u-steel-300: #c6ccd0;
+  --u-steel-500: #7b8891;
+  --u-steel-700: #46545e;
+  --u-radius: 24px;
+  --u-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  background: var(--u-paper);
+  color: var(--u-ink);
+  overflow-x: clip;
+}
+
+.dzu *,
+.dzu *::before,
+.dzu *::after { box-sizing: border-box; }
+
+.dzu__shell { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+
+.dzu a { text-decoration: none; }
+
+.dzu :focus-visible { outline: 3px solid var(--u-accent); outline-offset: 3px; }
+
+.dzu__display { margin: 0; font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; text-transform: uppercase; }
+
+.dzu__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--u-accent);
+}
+
+.dzu__eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+
+/* --- первый экран -------------------------------------------------------- */
+
+.dzu-hero { position: relative; background: var(--u-ink); color: #fff; overflow: hidden; }
+
+.dzu-hero__media {
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/factory/machining.jpg") center / cover no-repeat;
+  opacity: 0.2;
+}
+
+.dzu-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(98deg, var(--u-ink) 20%, rgba(13, 31, 45, 0.88) 58%, rgba(13, 31, 45, 0.5) 100%);
+}
+
+.dzu-hero__inner { position: relative; display: grid; gap: 18px; max-width: 760px; padding: clamp(44px, 5vw, 76px) 0 clamp(28px, 3vw, 44px); }
+
+.dzu-hero__title { font-size: clamp(27px, 3.2vw, 46px); color: #fff; }
+
+.dzu-hero__lede { margin: 0; max-width: 60ch; font-size: clamp(15px, 1.1vw, 17px); line-height: 1.68; color: rgba(255, 255, 255, 0.76); }
+
+.dzu-facts {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.dzu-facts li { display: grid; gap: 5px; padding: 18px 22px; background: var(--u-ink); }
+
+.dzu-facts b { font-size: clamp(20px, 2.1vw, 28px); font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+
+.dzu-facts span { font-size: 12.5px; line-height: 1.4; color: rgba(255, 255, 255, 0.58); }
+
+/* --- якорная навигация по отраслям ---------------------------------------- */
+
+.dzu-jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: clamp(24px, 3vw, 36px) 0 0; list-style: none; }
+
+.dzu-jump a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 9px;
+  padding: 11px 18px;
+  border: 1px solid var(--u-steel-300);
+  border-radius: 999px;
+  background: var(--u-surface);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--u-steel-700);
+  transition: border-color 0.18s var(--u-ease), color 0.18s var(--u-ease), transform 0.18s var(--u-ease);
+}
+
+.dzu-jump a:hover, .dzu-jump a:focus { border-color: var(--u-ink); color: var(--u-ink); transform: translateY(-1px); }
+
+.dzu-jump i { font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--u-accent); }
+
+/* --- отраслевой разворот ---------------------------------------------------- */
+
+.dzu-field { padding: clamp(38px, 4.4vw, 66px) 0; border-bottom: 1px solid var(--u-steel-300); scroll-margin-top: 96px; }
+
+.dzu-field:last-of-type { border-bottom: 0; }
+
+.dzu-field__inner { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: clamp(24px, 3.4vw, 60px); align-items: start; }
+
+/* Часть отраслей разворачиваем зеркально — страница перестаёт читаться
+   как пять одинаковых блоков подряд. Модификатор ставится в разметке:
+   на nth-of-type полагаться нельзя, среди соседей есть другие section. */
+.dzu-field--flip .dzu-field__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 360px); }
+
+.dzu-field--flip .dzu-field__text { order: 2; }
+
+.dzu-field__text { display: grid; gap: 14px; align-content: start; position: sticky; top: 96px; }
+
+.dzu-field__num { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--u-accent); font-variant-numeric: tabular-nums; }
+
+.dzu-field__title { margin: 0; font-size: clamp(24px, 2.6vw, 36px); font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; text-transform: uppercase; }
+
+.dzu-field__text p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--u-steel-700); }
+
+.dzu-field__label { margin: 6px 0 0; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--u-steel-500); }
+
+.dzu-series { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+
+.dzu-series a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--u-steel-300);
+  border-radius: 12px;
+  background: var(--u-surface);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--u-ink);
+  transition: border-color 0.18s var(--u-ease), color 0.18s var(--u-ease), transform 0.18s var(--u-ease);
+}
+
+.dzu-series a:hover, .dzu-series a:focus { border-color: var(--u-ink); color: var(--u-accent); transform: translateX(3px); }
+
+.dzu-series svg { flex: none; color: var(--u-steel-500); }
+
+.dzu-series a:hover svg { color: var(--u-accent); }
+
+/* --- мозаика объектов ------------------------------------------------------- */
+
+.dzu-shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+
+.dzu-shots li:first-child { grid-column: span 2; }
+
+.dzu-shot {
+  display: grid;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--u-steel-300);
+  border-radius: 18px;
+  background: var(--u-surface);
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s var(--u-ease), transform 0.2s var(--u-ease), box-shadow 0.2s var(--u-ease);
+}
+
+.dzu-shot:hover { border-color: var(--u-ink); transform: translateY(-3px); box-shadow: 0 18px 34px -24px rgba(8, 22, 32, 0.55); }
+
+.dzu-shot__frame { position: relative; aspect-ratio: 16 / 9; background: var(--u-steel-100); overflow: hidden; }
+
+.dzu-shot__frame img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s var(--u-ease); }
+
+.dzu-shot:hover .dzu-shot__frame img { transform: scale(1.04); }
+
+.dzu-shot__zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(8, 22, 32, 0.7);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s var(--u-ease), background-color 0.2s var(--u-ease);
+}
+
+.dzu-shot:hover .dzu-shot__zoom,
+.dzu-shot:focus-visible .dzu-shot__zoom { opacity: 1; background: var(--u-accent); color: #06202c; }
+
+.dzu-shot__name { padding: 14px 16px 16px; font-size: 13.5px; font-weight: 600; line-height: 1.4; color: var(--u-ink); }
+
+/* --- полноэкранный просмотр -------------------------------------------------- */
+
+.dzu-lb {
+  position: fixed;
+  inset: 0;
+  /* Шапка сайта сидит на 10001 — окно просмотра должно быть выше неё. */
+  z-index: 100000;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  padding: clamp(14px, 2vw, 26px);
+  background: #061016;
+  color: #fff;
+}
+
+.dzu-lb[hidden] { display: none; }
+
+.dzu-lb__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+
+.dzu-lb__count { font-size: 13px; font-variant-numeric: tabular-nums; color: rgba(255, 255, 255, 0.6); }
+
+.dzu-lb__close,
+.dzu-lb__nav {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.18s var(--u-ease), background-color 0.18s var(--u-ease);
+}
+
+.dzu-lb__close:hover,
+.dzu-lb__nav:hover { border-color: var(--u-accent); background: rgba(0, 174, 239, 0.18); }
+
+.dzu-lb__stage { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: clamp(10px, 2vw, 24px); min-height: 0; }
+
+.dzu-lb__figure { display: grid; place-items: center; min-height: 0; height: 100%; margin: 0; }
+
+.dzu-lb__figure img { max-width: 100%; max-height: 100%; border-radius: 10px; object-fit: contain; }
+
+.dzu-lb__caption { display: grid; gap: 6px; justify-items: center; text-align: center; }
+
+.dzu-lb__title { margin: 0; font-size: clamp(15px, 1.6vw, 19px); font-weight: 700; }
+
+.dzu-lb__meta { margin: 0; font-size: 13px; color: rgba(255, 255, 255, 0.6); }
+
+/* --- закрывающий блок --------------------------------------------------------- */
+
+.dzu-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 26px;
+  align-items: center;
+  margin: clamp(40px, 4.4vw, 64px) 0 clamp(44px, 5vw, 74px);
+  padding: clamp(26px, 3vw, 44px);
+  border-radius: var(--u-radius);
+  background: var(--u-ink);
+  color: #fff;
+}
+
+.dzu-cta__title { margin: 0 0 8px; font-size: clamp(20px, 2.1vw, 30px); font-weight: 800; letter-spacing: -0.02em; }
+
+.dzu-cta__text { margin: 0; max-width: 62ch; font-size: 15px; line-height: 1.65; color: rgba(255, 255, 255, 0.7); }
+
+.dzu-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: var(--u-accent);
+  color: #06202c;
+  font-size: 14.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background-color 0.18s var(--u-ease), transform 0.18s var(--u-ease);
+}
+
+.dzu-btn:hover, .dzu-btn:focus { background: #33c1f3; color: #06202c; transform: translateY(-1px); }
+
+/* --- адаптив ------------------------------------------------------------------ */
+
+@media (max-width: 1000px) {
+  .dzu-field__inner,
+  .dzu-field--flip .dzu-field__inner { grid-template-columns: minmax(0, 1fr); }
+  .dzu-field--flip .dzu-field__text { order: 0; }
+  /* В одну колонку липкий текст только мешает: он занял бы весь экран. */
+  .dzu-field__text { position: static; }
+}
+
+@media (max-width: 900px) {
+  .dzu-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dzu-cta { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .dzu-shots { grid-template-columns: minmax(0, 1fr); }
+  .dzu-shots li:first-child { grid-column: span 1; }
+  .dzu-lb__stage { grid-template-columns: minmax(0, 1fr); grid-template-areas: "figure"; }
+  .dzu-lb__figure { grid-area: figure; }
+  .dzu-lb__nav { position: absolute; bottom: clamp(14px, 2vw, 26px); }
+  .dzu-lb__nav--prev { left: clamp(14px, 2vw, 26px); }
+  .dzu-lb__nav--next { right: clamp(14px, 2vw, 26px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dzu * { transition-duration: 0.01ms !important; }
+}

@@ -1,0 +1,457 @@
+/* ==========================================================================
+   Страница «О компании». Отличается от каталога и профиля тем, что почти
+   весь контент здесь интерактивный: разрез двигателя с подсветкой узлов и
+   калькулятор класса энергоэффективности. Палитра общая для сайта, но
+   добавлен второй акцент — медь (--a-copper): им подсвечивается обмотка
+   и всё, что связано с потерями и энергией.
+   Префикс dza-, чтобы не пересечься с bootstrap и платформенным css.css.
+   ========================================================================== */
+
+.dza {
+  --a-ink: #0d1f2d;
+  --a-ink-deep: #081620;
+  --a-paper: #f2f3f2;
+  --a-surface: #ffffff;
+  --a-accent: #00aeef;
+  --a-copper: #d98a3f;
+  --a-steel-100: #e4e7e9;
+  --a-steel-300: #c6ccd0;
+  --a-steel-500: #7b8891;
+  --a-steel-700: #46545e;
+  --a-radius: 24px;
+  --a-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  background: var(--a-paper);
+  color: var(--a-ink);
+  overflow-x: clip;
+}
+
+.dza *,
+.dza *::before,
+.dza *::after { box-sizing: border-box; }
+
+.dza__shell { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+
+.dza a { text-decoration: none; }
+
+.dza :focus-visible { outline: 3px solid var(--a-accent); outline-offset: 3px; }
+
+.dza__display { margin: 0; font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; text-transform: uppercase; }
+
+.dza__num { font-variant-numeric: tabular-nums; }
+
+/* Надпись-указатель над заголовком: тонкая линия + текст вразрядку. */
+.dza__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--a-accent);
+}
+
+.dza__eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+
+/* --- первый экран -------------------------------------------------------- */
+
+.dza-hero { position: relative; background: var(--a-ink); color: #fff; overflow: hidden; }
+
+.dza-hero__media {
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/factory/hero.jpg") center / cover no-repeat;
+  opacity: 0.22;
+}
+
+.dza-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(96deg, var(--a-ink) 18%, rgba(13, 31, 45, 0.9) 52%, rgba(13, 31, 45, 0.55) 100%);
+}
+
+.dza-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(100deg, transparent 30%, #000 100%);
+  -webkit-mask-image: linear-gradient(100deg, transparent 30%, #000 100%);
+}
+
+.dza-hero__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+  gap: clamp(24px, 4vw, 60px);
+  align-items: center;
+  padding: clamp(44px, 5vw, 80px) 0 clamp(32px, 3.4vw, 52px);
+}
+
+.dza-hero__text { display: grid; gap: 20px; max-width: 720px; }
+
+.dza-hero__title { font-size: clamp(27px, 3.4vw, 50px); color: #fff; }
+
+.dza-hero__lede {
+  margin: 0;
+  max-width: 58ch;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* Ротор в первом экране: медленное вращение, метафора «не останавливаемся». */
+.dza-hero__rotor { position: relative; justify-self: center; width: 100%; max-width: 360px; }
+
+.dza-hero__rotor svg { display: block; width: 100%; height: auto; }
+
+.dza-spin { transform-origin: 260px 260px; animation: dza-spin 26s linear infinite; }
+
+.dza-spin--slow { transform-origin: 260px 260px; animation: dza-spin 64s linear infinite reverse; }
+
+@keyframes dza-spin { to { transform: rotate(360deg); } }
+
+/* --- счётчики ------------------------------------------------------------- */
+
+.dza-facts {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.dza-facts li { display: grid; gap: 5px; padding: 20px 22px; background: var(--a-ink); }
+
+.dza-facts b { font-size: clamp(22px, 2.3vw, 32px); font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+
+.dza-facts span { font-size: 12.5px; line-height: 1.4; color: rgba(255, 255, 255, 0.58); }
+
+/* --- секции --------------------------------------------------------------- */
+
+.dza-section { padding: clamp(48px, 5.2vw, 82px) 0; }
+
+.dza-section--tight { padding-top: clamp(30px, 3vw, 44px); }
+
+.dza-section__head { display: grid; gap: 12px; max-width: 780px; margin-bottom: 30px; }
+
+.dza-section__title { font-size: clamp(23px, 2.5vw, 36px); }
+
+.dza-section__lede { margin: 0; font-size: 15.5px; line-height: 1.68; color: var(--a-steel-700); }
+
+/* --- разрез двигателя ----------------------------------------------------- */
+
+.dza-cut { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(22px, 3vw, 52px); align-items: start; }
+
+.dza-cut__stage {
+  position: relative;
+  border: 1px solid var(--a-steel-300);
+  border-radius: var(--a-radius);
+  background:
+    radial-gradient(circle at 50% 45%, #12293a 0%, var(--a-ink-deep) 68%);
+  overflow: hidden;
+}
+
+/* Чертёжная сетка под разрезом — узел читается как деталь на кальке. */
+.dza-cut__stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 174, 239, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 174, 239, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dza-cut__svg { position: relative; display: block; width: 100%; height: auto; }
+
+/* Все узлы приглушены, активный — в полную силу. */
+.dza-part { cursor: pointer; transition: opacity 0.22s var(--a-ease); }
+
+.dza-cut.is-focused .dza-part { opacity: 0.34; }
+
+.dza-cut.is-focused .dza-part.is-lit { opacity: 1; }
+
+.dza-part__ring { fill: none; stroke: var(--a-accent); stroke-width: 2; opacity: 0; transition: opacity 0.22s var(--a-ease); }
+
+.dza-part.is-lit .dza-part__ring { opacity: 1; }
+
+.dza-pin circle { fill: var(--a-ink-deep); stroke: rgba(255, 255, 255, 0.4); stroke-width: 1.5; transition: fill 0.22s var(--a-ease), stroke 0.22s var(--a-ease); }
+
+.dza-pin text { fill: rgba(255, 255, 255, 0.72); font-size: 13px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+
+.dza-part.is-lit .dza-pin circle { fill: var(--a-accent); stroke: var(--a-accent); }
+
+.dza-part.is-lit .dza-pin text { fill: #06202c; }
+
+/* Список узлов: активный раскрывается, остальные свёрнуты. */
+.dza-cut__list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+
+.dza-cut__item { border: 1px solid var(--a-steel-300); border-radius: 16px; background: var(--a-surface); overflow: hidden; transition: border-color 0.2s var(--a-ease); }
+
+.dza-cut__item.is-lit { border-color: var(--a-ink); }
+
+.dza-cut__btn {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 15px 18px;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dza-cut__num { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: var(--a-accent); }
+
+.dza-cut__name { font-size: 15.5px; font-weight: 700; line-height: 1.3; color: var(--a-ink); }
+
+.dza-cut__chev { color: var(--a-steel-500); transition: transform 0.24s var(--a-ease); }
+
+.dza-cut__item.is-lit .dza-cut__chev { transform: rotate(180deg); color: var(--a-ink); }
+
+.dza-cut__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.28s var(--a-ease); }
+
+.dza-cut__item.is-lit .dza-cut__body { grid-template-rows: 1fr; }
+
+.dza-cut__body > div { overflow: hidden; }
+
+.dza-cut__text { margin: 0; padding: 0 18px 16px 50px; font-size: 14.5px; line-height: 1.65; color: var(--a-steel-700); }
+
+.dza-cut__tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0 18px 17px 50px; list-style: none; }
+
+.dza-cut__tags li {
+  padding: 6px 12px;
+  border: 1px solid var(--a-steel-300);
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--a-steel-700);
+}
+
+.dza-cut__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 18px 18px 50px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--a-ink);
+  border-bottom: 1px solid var(--a-steel-300);
+  padding-bottom: 2px;
+  transition: color 0.18s var(--a-ease), border-color 0.18s var(--a-ease);
+}
+
+.dza-cut__link:hover, .dza-cut__link:focus { color: var(--a-accent); border-color: var(--a-accent); }
+
+/* --- история компании ------------------------------------------------------
+   Слева липкая шкала глав, справа поток текста. Активная глава определяется
+   по прокрутке, а не по клику: шкала работает как указатель положения
+   и одновременно как навигация. */
+
+.dza-story { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: clamp(24px, 4vw, 72px); align-items: start; }
+
+.dza-story__rail { position: sticky; top: 96px; }
+
+.dza-story__steps { display: grid; margin: 0; padding: 0; list-style: none; }
+
+/* Вертикальная линия-шкала проходит через все засечки. */
+.dza-story__step { position: relative; padding-left: 26px; }
+
+.dza-story__step::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--a-steel-300);
+}
+
+.dza-story__step:first-child::before { top: 14px; }
+.dza-story__step:last-child::before { bottom: calc(100% - 14px); }
+
+/* Засечка: пустая точка, у активной главы — залитая акцентом. */
+.dza-story__step::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--a-steel-300);
+  border-radius: 50%;
+  background: var(--a-paper);
+  transition: background-color 0.2s var(--a-ease), border-color 0.2s var(--a-ease), transform 0.2s var(--a-ease);
+}
+
+.dza-story__step.is-active::after { border-color: var(--a-accent); background: var(--a-accent); transform: scale(1.25); }
+
+.dza-story__step button {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding: 6px 0 14px;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dza-story__step-num { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--a-steel-500); transition: color 0.2s var(--a-ease); }
+
+.dza-story__step-name { font-size: 14px; font-weight: 600; line-height: 1.35; color: var(--a-steel-500); transition: color 0.2s var(--a-ease); }
+
+.dza-story__step button:hover .dza-story__step-name { color: var(--a-ink); }
+
+.dza-story__step.is-active .dza-story__step-num { color: var(--a-accent); }
+.dza-story__step.is-active .dza-story__step-name { color: var(--a-ink); font-weight: 700; }
+
+.dza-story__flow { display: grid; gap: 0; }
+
+.dza-story__chapter { padding: clamp(26px, 3vw, 40px) 0; border-top: 1px solid var(--a-steel-300); scroll-margin-top: 110px; }
+
+.dza-story__chapter:first-child { border-top: 0; padding-top: 0; }
+
+.dza-story__num { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--a-accent); }
+
+.dza-story__title { margin: 0 0 14px; font-size: clamp(20px, 2.1vw, 28px); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
+
+.dza-story__text { margin: 0 0 14px; max-width: 68ch; font-size: 15.5px; line-height: 1.72; color: var(--a-steel-700); }
+
+/* Продуктовые направления: жирная строка и пояснение под ней. */
+.dza-story__lines { display: grid; gap: 1px; margin: 20px 0 0; padding: 0; list-style: none; border: 1px solid var(--a-steel-300); border-radius: 18px; background: var(--a-steel-300); overflow: hidden; }
+
+.dza-story__lines li { display: grid; gap: 4px; padding: 16px 20px; background: var(--a-surface); }
+
+.dza-story__lines b { font-size: 15px; font-weight: 700; }
+
+.dza-story__lines span { font-size: 13.5px; line-height: 1.5; color: var(--a-steel-500); }
+
+.dza-story__tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+
+.dza-story__tile {
+  display: grid;
+  gap: 5px;
+  align-content: start;
+  padding: 18px 20px;
+  border: 1px solid var(--a-steel-300);
+  border-radius: 18px;
+  background: var(--a-surface);
+  transition: border-color 0.2s var(--a-ease), transform 0.2s var(--a-ease);
+}
+
+.dza-story__tile:hover { border-color: var(--a-ink); transform: translateY(-2px); }
+
+.dza-story__tile b { font-size: clamp(22px, 2.2vw, 30px); font-weight: 800; letter-spacing: -0.03em; }
+
+.dza-story__tile span { font-size: 13px; line-height: 1.5; color: var(--a-steel-700); }
+
+.dza-story__quote {
+  margin: 0;
+  padding: clamp(24px, 3vw, 36px);
+  border: 0;
+  border-radius: var(--a-radius);
+  background: var(--a-ink);
+  color: #fff;
+}
+
+.dza-story__quote p { margin: 0; max-width: 70ch; font-size: clamp(16px, 1.5vw, 20px); line-height: 1.6; font-weight: 600; letter-spacing: -0.01em; }
+
+/* --- сертификаты -------------------------------------------- */
+
+.dza-cert { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+
+.dza-cert li {
+  display: grid;
+  gap: 3px;
+  padding: 14px 20px;
+  border: 1px solid var(--a-steel-300);
+  border-radius: 14px;
+  background: var(--a-surface);
+}
+
+.dza-cert b { font-size: 15px; font-weight: 800; letter-spacing: 0.02em; }
+
+.dza-cert span { font-size: 12px; color: var(--a-steel-500); }
+
+/* --- закрывающий блок ------------------------------------------------------ */
+
+.dza-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 26px;
+  align-items: center;
+  margin-bottom: clamp(44px, 5vw, 74px);
+  padding: clamp(26px, 3vw, 44px);
+  border-radius: var(--a-radius);
+  background: var(--a-ink);
+  color: #fff;
+}
+
+.dza-cta__title { margin: 0 0 8px; font-size: clamp(20px, 2.1vw, 30px); font-weight: 800; letter-spacing: -0.02em; }
+
+.dza-cta__text { margin: 0; max-width: 62ch; font-size: 15px; line-height: 1.65; color: rgba(255, 255, 255, 0.7); }
+
+.dza-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: var(--a-accent);
+  color: #06202c;
+  font-size: 14.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background-color 0.18s var(--a-ease), transform 0.18s var(--a-ease);
+}
+
+.dza-btn:hover, .dza-btn:focus { background: #33c1f3; color: #06202c; transform: translateY(-1px); }
+
+/* --- адаптив --------------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .dza-cut { grid-template-columns: minmax(0, 1fr); }
+  .dza-story { grid-template-columns: minmax(0, 1fr); }
+  /* Без липкой колонки шкала теряет смысл — превращаем главы в плитки-ссылки. */
+  .dza-story__rail { position: static; margin-bottom: 24px; }
+  .dza-story__steps { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 8px; }
+  .dza-story__step { padding-left: 0; border: 1px solid var(--a-steel-300); border-radius: 14px; background: var(--a-surface); }
+  .dza-story__step::before { display: none; }
+  .dza-story__step::after { left: 14px; top: 16px; }
+  .dza-story__step.is-active { border-color: var(--a-ink); }
+  .dza-story__step button { padding: 12px 16px 12px 34px; }
+}
+
+@media (max-width: 900px) {
+  .dza-story__tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dza-hero__inner { grid-template-columns: minmax(0, 1fr); }
+  .dza-hero__rotor { max-width: 250px; }
+  .dza-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dza-cta { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .dza-story__steps { grid-template-columns: minmax(0, 1fr); }
+  .dza-story__tiles { grid-template-columns: minmax(0, 1fr); }
+  .dza-cut__text, .dza-cut__tags { padding-left: 18px; }
+  .dza-cut__link { margin-left: 18px; }
+}
+
+/* Уважаем системную настройку «меньше движения». */
+@media (prefers-reduced-motion: reduce) {
+  .dza-spin, .dza-spin--slow { animation: none; }
+  .dza * { transition-duration: 0.01ms !important; }
+}

@@ -34,10 +34,6 @@
 /* --- вступление ---------------------------------------------------------- */
 
 .dzp-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
-  gap: clamp(24px, 4vw, 64px);
-  align-items: center;
   padding: clamp(32px, 4vw, 56px) 0 clamp(28px, 3vw, 44px);
 }
 
@@ -74,32 +70,6 @@
 
 .dzp-intro__cta:hover,
 .dzp-intro__cta:focus { background: #24395f; color: #fff; text-decoration: none; transform: translateY(-1px); }
-
-/* Счётчики рядом со вступлением — данные со страницы, без выдумок. */
-.dzp-facts {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border: 1px solid var(--dzp-steel-300);
-  border-radius: 16px;
-  background: var(--dzp-steel-300);
-  overflow: hidden;
-}
-
-.dzp-facts li {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 18px;
-  background: var(--dzp-surface);
-}
-
-.dzp-facts b { font-size: 22px; font-weight: 800; }
-
-.dzp-facts span { font-size: 12px; line-height: 1.35; color: var(--dzp-steel-500); }
 
 /* --- сетка логотипов ----------------------------------------------------- */
 
@@ -205,7 +175,6 @@
 }
 
 @media (max-width: 900px) {
-  .dzp-intro { grid-template-columns: minmax(0, 1fr); }
   .dzp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .dzp-closing { grid-template-columns: minmax(0, 1fr); }
 }

@@ -1,0 +1,269 @@
+/* ==========================================================================
+   Страница «Сертификационные документы». Раньше здесь стояла платформенная
+   галерея из шести картинок без единой подписи. Теперь — карточки с названием
+   стандарта, органом выдачи и номером, фильтр по типу документа и просмотр
+   в полноэкранном окне. Палитра общая для сайта, префикс dzs-.
+   ========================================================================== */
+
+.dzs {
+  --s-ink: #0d1f2d;
+  --s-ink-deep: #081620;
+  --s-paper: #f2f3f2;
+  --s-surface: #ffffff;
+  --s-accent: #00aeef;
+  --s-steel-100: #e4e7e9;
+  --s-steel-300: #c6ccd0;
+  --s-steel-500: #7b8891;
+  --s-steel-700: #46545e;
+  --s-radius: 24px;
+  --s-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  background: var(--s-paper);
+  color: var(--s-ink);
+  overflow-x: clip;
+}
+
+.dzs *,
+.dzs *::before,
+.dzs *::after { box-sizing: border-box; }
+
+.dzs__shell { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+
+.dzs a { text-decoration: none; }
+
+.dzs :focus-visible { outline: 3px solid var(--s-accent); outline-offset: 3px; }
+
+.dzs__display { margin: 0; font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; text-transform: uppercase; }
+
+.dzs__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--s-accent);
+}
+
+.dzs__eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+
+/* --- первый экран -------------------------------------------------------- */
+
+.dzs-hero { position: relative; background: var(--s-ink); color: #fff; overflow: hidden; }
+
+.dzs-hero__media {
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/factory/storage.jpg") center / cover no-repeat;
+  opacity: 0.2;
+}
+
+.dzs-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(98deg, var(--s-ink) 20%, rgba(13, 31, 45, 0.88) 60%, rgba(13, 31, 45, 0.55) 100%);
+}
+
+.dzs-hero__inner { position: relative; display: grid; gap: 18px; max-width: 760px; padding: clamp(44px, 5vw, 76px) 0 clamp(30px, 3.2vw, 48px); }
+
+.dzs-hero__title { font-size: clamp(27px, 3.2vw, 46px); color: #fff; }
+
+.dzs-hero__lede { margin: 0; max-width: 60ch; font-size: clamp(15px, 1.1vw, 17px); line-height: 1.68; color: rgba(255, 255, 255, 0.76); }
+
+.dzs-facts {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.dzs-facts li { display: grid; gap: 5px; padding: 18px 22px; background: var(--s-ink); }
+
+.dzs-facts b { font-size: clamp(20px, 2.1vw, 28px); font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+
+.dzs-facts span { font-size: 12.5px; line-height: 1.4; color: rgba(255, 255, 255, 0.58); }
+
+/* --- секция и фильтр ------------------------------------------------------ */
+
+.dzs-section { padding: clamp(40px, 4.6vw, 70px) 0 clamp(48px, 5vw, 78px); }
+
+.dzs-section__head { display: grid; gap: 12px; max-width: 780px; margin-bottom: 24px; }
+
+.dzs-section__title { font-size: clamp(23px, 2.5vw, 34px); }
+
+.dzs-section__lede { margin: 0; font-size: 15.5px; line-height: 1.68; color: var(--s-steel-700); }
+
+.dzs-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; padding: 0; list-style: none; }
+
+.dzs-filter button {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 11px 18px;
+  border: 1px solid var(--s-steel-300);
+  border-radius: 999px;
+  background: var(--s-surface);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--s-steel-700);
+  cursor: pointer;
+  transition: border-color 0.18s var(--s-ease), background-color 0.18s var(--s-ease), color 0.18s var(--s-ease);
+}
+
+.dzs-filter button:hover { border-color: var(--s-ink); color: var(--s-ink); }
+
+.dzs-filter button i { font-style: normal; font-size: 12px; font-weight: 700; color: var(--s-steel-500); }
+
+.dzs-filter button[aria-pressed="true"] { border-color: var(--s-ink); background: var(--s-ink); color: #fff; }
+
+.dzs-filter button[aria-pressed="true"] i { color: rgba(255, 255, 255, 0.55); }
+
+/* --- сетка сертификатов ---------------------------------------------------- */
+
+.dzs-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+
+.dzs-card { display: grid; }
+
+.dzs-card[hidden] { display: none; }
+
+.dzs-card__btn {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--s-steel-300);
+  border-radius: 18px;
+  background: var(--s-surface);
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s var(--s-ease), transform 0.2s var(--s-ease), box-shadow 0.2s var(--s-ease);
+}
+
+.dzs-card__btn:hover { border-color: var(--s-ink); transform: translateY(-3px); box-shadow: 0 18px 34px -24px rgba(8, 22, 32, 0.55); }
+
+/* Скан лежит на светлой подложке: у бумажных бланков свои поля, и подгонять
+   их под край карточки нельзя — документ должен читаться целиком. */
+.dzs-card__shot { position: relative; aspect-ratio: 576 / 780; background: var(--s-steel-100); overflow: hidden; }
+
+.dzs-card__shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+.dzs-card__zoom {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(8, 22, 32, 0.55);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s var(--s-ease);
+}
+
+.dzs-card__btn:hover .dzs-card__zoom,
+.dzs-card__btn:focus-visible .dzs-card__zoom { opacity: 1; }
+
+.dzs-card__zoom span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--s-accent);
+  color: #06202c;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dzs-card__body { display: grid; gap: 7px; align-content: start; padding: 16px 18px 18px; }
+
+.dzs-card__badge { justify-self: start; padding: 4px 10px; border-radius: 6px; background: var(--s-ink); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; }
+
+.dzs-card__title { font-size: 14.5px; font-weight: 700; line-height: 1.35; color: var(--s-ink); }
+
+.dzs-card__meta { font-size: 12.5px; line-height: 1.45; color: var(--s-steel-500); }
+
+.dzs-card__no { font-size: 11.5px; font-variant-numeric: tabular-nums; color: var(--s-steel-500); word-break: break-all; }
+
+/* --- полноэкранный просмотр ------------------------------------------------ */
+
+.dzs-lb {
+  position: fixed;
+  inset: 0;
+  /* Шапка сайта и боковая панель сидят на 10001 — окно просмотра должно быть
+     выше них, иначе логотип и меню проступают сквозь затемнение. */
+  z-index: 100000;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  padding: clamp(14px, 2vw, 26px);
+  background: #061016;
+  color: #fff;
+}
+
+.dzs-lb[hidden] { display: none; }
+
+.dzs-lb__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+
+.dzs-lb__count { font-size: 13px; font-variant-numeric: tabular-nums; color: rgba(255, 255, 255, 0.6); }
+
+.dzs-lb__close,
+.dzs-lb__nav {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.18s var(--s-ease), background-color 0.18s var(--s-ease);
+}
+
+.dzs-lb__close:hover,
+.dzs-lb__nav:hover { border-color: var(--s-accent); background: rgba(0, 174, 239, 0.18); }
+
+.dzs-lb__stage { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: clamp(10px, 2vw, 24px); min-height: 0; }
+
+.dzs-lb__figure { display: grid; place-items: center; min-height: 0; height: 100%; margin: 0; }
+
+.dzs-lb__figure img { max-width: 100%; max-height: 100%; border-radius: 10px; background: #fff; object-fit: contain; }
+
+.dzs-lb__caption { display: grid; gap: 6px; justify-items: center; text-align: center; }
+
+.dzs-lb__title { margin: 0; font-size: clamp(15px, 1.6vw, 19px); font-weight: 700; }
+
+.dzs-lb__meta { margin: 0; font-size: 13px; color: rgba(255, 255, 255, 0.6); }
+
+/* --- адаптив --------------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .dzs-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .dzs-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dzs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .dzs-grid { grid-template-columns: minmax(0, 1fr); }
+  /* Стрелки на узком экране уезжают под снимок, чтобы не отъедать ширину. */
+  .dzs-lb__stage { grid-template-columns: minmax(0, 1fr); grid-template-areas: "figure"; }
+  .dzs-lb__figure { grid-area: figure; }
+  .dzs-lb__nav { position: absolute; bottom: clamp(14px, 2vw, 26px); }
+  .dzs-lb__nav--prev { left: clamp(14px, 2vw, 26px); }
+  .dzs-lb__nav--next { right: clamp(14px, 2vw, 26px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dzs * { transition-duration: 0.01ms !important; }
+}
