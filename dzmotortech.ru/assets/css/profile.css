@@ -1,0 +1,394 @@
+/* ==========================================================================
+   Страница «Профиль компании». Оформление в том же ключе, что каталог
+   и страница партнёров: светлый фон, тёмные врезки, акцент #00aeef.
+   Все классы под префиксом dzc-p-, чтобы не пересечься с bootstrap
+   и платформенным css.css.
+   ========================================================================== */
+
+.dzc-p {
+  --p-ink: #0d1f2d;
+  --p-ink-deep: #081620;
+  --p-paper: #f2f3f2;
+  --p-surface: #ffffff;
+  --p-accent: #00aeef;
+  --p-steel-100: #e4e7e9;
+  --p-steel-300: #c6ccd0;
+  --p-steel-500: #7b8891;
+  --p-steel-700: #46545e;
+  --p-radius: 24px;
+  --p-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  background: var(--p-paper);
+  color: var(--p-ink);
+  overflow-x: clip;
+}
+
+.dzc-p *,
+.dzc-p *::before,
+.dzc-p *::after { box-sizing: border-box; }
+
+.dzc-p__shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.dzc-p a { text-decoration: none; }
+
+.dzc-p :focus-visible { outline: 3px solid var(--p-accent); outline-offset: 3px; }
+
+.dzc-p__display {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+/* --- первый экран -------------------------------------------------------- */
+
+.dzc-p-hero {
+  position: relative;
+  background: var(--p-ink);
+  color: #fff;
+  overflow: hidden;
+}
+
+.dzc-p-hero__media {
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/profile/intro.jpg") center / cover no-repeat;
+  opacity: 0.28;
+}
+
+.dzc-p-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, var(--p-ink) 16%, rgba(13, 31, 45, 0.86) 58%, rgba(13, 31, 45, 0.42) 100%);
+}
+
+.dzc-p-hero__inner {
+  position: relative;
+  display: grid;
+  gap: 22px;
+  max-width: 720px;
+  padding: clamp(46px, 5vw, 78px) 0 clamp(34px, 3.4vw, 52px);
+}
+
+.dzc-p-hero__title { font-size: clamp(26px, 3.2vw, 46px); color: #fff; }
+
+.dzc-p-hero__lede {
+  margin: 0;
+  max-width: 58ch;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.dzc-p-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+}
+
+.dzc-p-facts li {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  background: var(--p-ink);
+}
+
+.dzc-p-facts b { font-size: 19px; font-weight: 800; color: #fff; }
+
+.dzc-p-facts span { font-size: 12px; line-height: 1.35; color: rgba(255, 255, 255, 0.6); }
+
+/* --- секции -------------------------------------------------------------- */
+
+.dzc-p-section { padding: clamp(44px, 5vw, 76px) 0; }
+
+.dzc-p-section__head { display: grid; gap: 12px; max-width: 760px; margin-bottom: 26px; }
+
+.dzc-p-section__title { font-size: clamp(22px, 2.4vw, 34px); }
+
+.dzc-p-section__lede {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--p-steel-700);
+}
+
+/* --- аккордеон ----------------------------------------------------------- */
+
+.dzc-p-acc {
+  display: flex;
+  gap: 10px;
+  height: 520px;
+}
+
+.dzc-p-acc__item {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 76px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--p-ink-deep);
+  cursor: pointer;
+  transition: flex-grow 0.55s var(--p-ease);
+}
+
+.dzc-p-acc__item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Неактивные кадры приглушены, активный — в цвете: так видно, что открыто. */
+  filter: grayscale(1) brightness(0.72);
+  transform: scale(1.04);
+  transition: filter 0.55s var(--p-ease), transform 0.55s var(--p-ease);
+}
+
+.dzc-p-acc__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 22, 32, 0.92) 0%, rgba(8, 22, 32, 0.35) 42%, rgba(8, 22, 32, 0.1) 100%);
+  transition: opacity 0.4s var(--p-ease);
+}
+
+.dzc-p-acc__item.is-active { flex-grow: 6; }
+
+.dzc-p-acc__item.is-active img { filter: none; transform: scale(1); }
+
+.dzc-p-acc__body {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1;
+  display: grid;
+  gap: 10px;
+  padding: 24px;
+  color: #fff;
+}
+
+/* Свёрнутая колонка: заголовок стоит вертикально, как в примере. */
+.dzc-p-acc__label {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  z-index: 1;
+  margin: 0;
+  transform: translateX(-50%);
+  writing-mode: vertical-rl;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.82);
+  transition: opacity 0.3s var(--p-ease);
+}
+
+.dzc-p-acc__item.is-active .dzc-p-acc__label { opacity: 0; }
+
+.dzc-p-acc__title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s var(--p-ease) 0.12s, transform 0.4s var(--p-ease) 0.12s;
+}
+
+.dzc-p-acc__text {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s var(--p-ease) 0.18s, transform 0.4s var(--p-ease) 0.18s;
+}
+
+.dzc-p-acc__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  padding-bottom: 2px;
+  width: max-content;
+  border-bottom: 1px solid var(--p-accent);
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s var(--p-ease) 0.24s, transform 0.4s var(--p-ease) 0.24s;
+}
+
+.dzc-p-acc__item.is-active .dzc-p-acc__title,
+.dzc-p-acc__item.is-active .dzc-p-acc__text,
+.dzc-p-acc__item.is-active .dzc-p-acc__more { opacity: 1; transform: translateY(0); }
+
+/* Номер кадра. У свёрнутой колонки заголовок и текст скрыты, но место
+   занимают, поэтому номер уезжал в середину и налезал на вертикальную
+   подпись — там прижимаем его к низу отдельно от потока. */
+.dzc-p-acc__index {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--p-accent);
+  transition: opacity 0.3s var(--p-ease);
+}
+
+.dzc-p-acc__item.is-active .dzc-p-acc__index {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+}
+
+/* --- развёрнутый текст --------------------------------------------------- */
+
+.dzc-p-block {
+  /* Запас сверху, чтобы после перехода по якорю заголовок не упирался в край. */
+  scroll-margin-top: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  gap: clamp(24px, 3vw, 56px);
+  align-items: center;
+  padding: clamp(26px, 2.6vw, 40px) 0;
+  border-top: 1px solid var(--p-steel-300);
+}
+
+.dzc-p-block--flip .dzc-p-block__media { order: -1; }
+
+.dzc-p-block__body { display: grid; gap: 12px; }
+
+.dzc-p-block__title { margin: 0; font-size: clamp(19px, 1.8vw, 25px); font-weight: 800; line-height: 1.25; }
+
+.dzc-p-block__text { margin: 0; font-size: 15px; line-height: 1.72; color: var(--p-steel-700); }
+
+/* Платформенный css.css снимает маркеры со всех ul — возвращаем их
+   для перечислений внутри разделов. */
+.dzc-p-block__list {
+  margin: 4px 0 0;
+  padding-left: 22px;
+  list-style: disc outside;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--p-steel-700);
+}
+
+.dzc-p-block__list li { margin-bottom: 8px; }
+
+.dzc-p-block__list li:last-child { margin-bottom: 0; }
+
+.dzc-p-block__list li::marker { color: var(--p-accent); }
+
+/* Карта проектов: показываем целиком и на всю ширину блока — иначе
+   подписи городов теряются. */
+.dzc-p-block--wide { grid-template-columns: minmax(0, 1fr); }
+
+.dzc-p-block--wide .dzc-p-block__media img {
+  aspect-ratio: auto;
+  max-height: 620px;
+  object-fit: contain;
+  background: #0d1f2d;
+}
+
+.dzc-p-block__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--p-steel-300);
+}
+
+/* --- закрывающий блок ---------------------------------------------------- */
+
+.dzc-p-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 26px;
+  align-items: center;
+  margin-bottom: clamp(44px, 5vw, 72px);
+  padding: clamp(28px, 3.4vw, 46px);
+  border-radius: var(--p-radius);
+  background: var(--p-ink);
+  color: #fff;
+}
+
+.dzc-p-cta__title { margin: 0 0 10px; font-size: clamp(20px, 2vw, 28px); font-weight: 800; }
+
+.dzc-p-cta__text { margin: 0; max-width: 62ch; font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, 0.72); }
+
+.dzc-p-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border-radius: 999px;
+  background: var(--p-accent);
+  font-size: 14px;
+  font-weight: 600;
+  color: #04222e;
+  white-space: nowrap;
+  transition: background-color 0.18s var(--p-ease), transform 0.18s var(--p-ease);
+}
+
+.dzc-p-btn:hover,
+.dzc-p-btn:focus { background: #33c1f3; color: #04222e; transform: translateY(-1px); }
+
+/* --- адаптив ------------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .dzc-p-acc { height: 440px; }
+  .dzc-p-acc__item { min-width: 62px; }
+  .dzc-p-acc__title { font-size: 19px; }
+}
+
+@media (max-width: 900px) {
+  .dzc-p-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dzc-p-block,
+  .dzc-p-block--flip { grid-template-columns: minmax(0, 1fr); }
+  .dzc-p-block--flip .dzc-p-block__media { order: 0; }
+  .dzc-p-cta { grid-template-columns: minmax(0, 1fr); }
+
+  /* Горизонтальный аккордеон на узком экране не читается — раскладываем
+     карточками, подписи показываем сразу. */
+  .dzc-p-acc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; height: auto; }
+  .dzc-p-acc__item { flex: none; min-width: 0; aspect-ratio: 3 / 4; }
+  .dzc-p-acc__item img { filter: none; transform: none; }
+  .dzc-p-acc__label { display: none; }
+  .dzc-p-acc__title { font-size: 16px; opacity: 1; transform: none; }
+  .dzc-p-acc__index { position: static; }
+  .dzc-p-acc__text { display: none; }
+  .dzc-p-acc__more { opacity: 1; transform: none; font-size: 12px; }
+  .dzc-p-acc__body { padding: 16px; }
+}
+
+@media (max-width: 560px) {
+  .dzc-p-acc { grid-template-columns: minmax(0, 1fr); }
+  .dzc-p-acc__item { aspect-ratio: 16 / 10; }
+  .dzc-p-acc__text { display: block; opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dzc-p * { transition-duration: 0.01ms !important; }
+}
